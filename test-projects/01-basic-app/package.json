@@ -1,0 +1,69 @@
+{
+  "name": "basic-app",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for basic-app goes here",
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build --environment=production",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
+    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "start": "ember serve",
+    "test": "npm-run-all lint test:*",
+    "test:ember": "ember test"
+  },
+  "devDependencies": {
+    "@ember/optional-features": "*",
+    "@ember/test-helpers": "*",
+    "@glimmer/component": "*",
+    "@glimmer/tracking": "*",
+    "babel-eslint": "*",
+    "broccoli-asset-rev": "*",
+    "ember-auto-import": "*",
+    "ember-cli": "*",
+    "ember-cli-app-version": "*",
+    "ember-cli-babel": "*",
+    "ember-cli-dependency-checker": "*",
+    "ember-cli-htmlbars": "*",
+    "ember-cli-inject-live-reload": "*",
+    "ember-cli-sri": "*",
+    "ember-cli-terser": "*",
+    "ember-data": "*",
+    "ember-export-application-global": "*",
+    "ember-fetch": "*",
+    "ember-load-initializers": "*",
+    "ember-maybe-import-regenerator": "*",
+    "ember-page-title": "*",
+    "ember-qunit": "*",
+    "ember-resolver": "*",
+    "ember-source": "*",
+    "ember-template-lint": "*",
+    "ember-welcome-page": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-ember": "*",
+    "eslint-plugin-node": "*",
+    "eslint-plugin-prettier": "*",
+    "loader.js": "*",
+    "npm-run-all": "*",
+    "prettier": "*",
+    "qunit": "*",
+    "qunit-dom": "*"
+  },
+  "engines": {
+    "node": "10.* || >= 12"
+  },
+  "ember": {
+    "edition": "octane"
+  }
+}
