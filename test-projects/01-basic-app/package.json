@@ -22,6 +22,10 @@
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test"
   },
+  "dependencies": {
+    "miragejs": "^0.1.41",
+    "ember-mirage": "git+https://github.com/bgantzler/ember-mirage#*"
+  },
   "devDependencies": {
     "@ember/optional-features": "*",
     "@ember/test-helpers": "*",
@@ -54,11 +58,13 @@
     "eslint-plugin-ember": "*",
     "eslint-plugin-node": "*",
     "eslint-plugin-prettier": "*",
+    "faker": "*",
     "loader.js": "*",
     "npm-run-all": "*",
     "prettier": "*",
     "qunit": "*",
-    "qunit-dom": "*"
+    "qunit-dom": "*",
+    "webpack": "*"
   },
   "engines": {
     "node": "10.* || >= 12"

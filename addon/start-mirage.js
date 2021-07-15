@@ -1,5 +1,6 @@
 import readModules from './utils/read-modules';
 import { singularize, pluralize } from 'ember-inflector';
+import assert from "./assert";
 
 /**
   Helper to start mirage. This should not be called directly. In rfc232/rfc268
@@ -19,17 +20,19 @@ export default function startMirage(
   owner,
   { env, baseConfig, testConfig, makeServer } = {}
 ) {
-  if (!env || !baseConfig) {
+  if (!env || !makeServer) {
     if (!owner) {
       throw new Error('You must pass `owner` to startMirage()');
     }
 
     env = env || owner.resolveRegistration('config:environment');
 
-    // These are set from `<app>/initializers/ember-cli-mirage`
-    baseConfig = baseConfig || owner.resolveRegistration('mirage:base-config');
-    testConfig = testConfig || owner.resolveRegistration('mirage:test-config');
+    // These are set from `<app>/initializers/ember-mirage`
     makeServer = makeServer || owner.resolveRegistration('mirage:make-server');
+    assert(
+      'makeServer was not properly registered',
+      makeServer
+    );
   }
 
   let environment = env.environment;
@@ -43,7 +46,6 @@ export default function startMirage(
   options.trackRequests = mirageEnvironment.trackRequests;
   options.inflector = { singularize, pluralize };
 
-  // TODO Assert that a makeServer function is available
   let server = makeServer(options);
   if (
     typeof location !== 'undefined' &&
