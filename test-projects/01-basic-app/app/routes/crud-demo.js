@@ -6,6 +6,6 @@ export default class CrudDemoRoute extends Route {
   async model() {
     debugger;
     let response = await fetch('/users');
-    return await response.json();
+    return  response.json();
   }
 }
