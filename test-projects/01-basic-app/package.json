@@ -52,7 +52,6 @@
     "ember-resolver": "*",
     "ember-source": "*",
     "ember-template-lint": "*",
-    "ember-welcome-page": "*",
     "eslint": "*",
     "eslint-config-prettier": "*",
     "eslint-plugin-ember": "*",

@@ -1,8 +1,7 @@
-import {
-  createServer,
-} from 'miragejs';
+import { createServer } from 'miragejs';
 
 export default function makeServer(config) {
+  debugger;
   let finalConfig = {
     ...config,
     // models: { ...discoverEmberDataModels(), ...config.models },
@@ -14,4 +13,5 @@ export default function makeServer(config) {
 }
 
 function routes() {
+  this.resource('users');
 }

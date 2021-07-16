@@ -1,5 +1,6 @@
 import ENV from '../config/environment';
 import startMirageImpl from 'ember-mirage/start-mirage';
+import getRfc232TestContext from 'ember-mirage/get-rfc232-test-context';
 import makeServer from '../mirage/config';
 
 //
@@ -31,6 +32,9 @@ export function startMirage(env = ENV) {
 
 function _shouldUseMirage(env, addonConfig) {
   if (typeof FastBoot !== 'undefined') {
+    return false;
+  }
+  if (getRfc232TestContext()) {
     return false;
   }
   let userDeclaredEnabled = typeof addonConfig.enabled !== 'undefined';
