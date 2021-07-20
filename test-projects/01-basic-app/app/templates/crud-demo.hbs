@@ -9,6 +9,7 @@
 {{else}}
 
   {{#each @model.data as |user|}}
+    {{log "user" user}}
     <div data-test-id="user">
       <form {{on 'submit' (fn this.updateUser user)}}>
         <Input value={{user.name}} />
