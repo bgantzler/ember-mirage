@@ -5,7 +5,7 @@ export default function makeServer(config) {
   debugger;
   let finalConfig = {
     ...config,
-    models: { ...discoverEmberDataModels(), ...config.models },
+    models: { ...discoverEmberDataModels(), ...config.models},
     // serializers: applyEmberDataSerializers(config.serializers),
     serializers: config.serializers,
     routes,

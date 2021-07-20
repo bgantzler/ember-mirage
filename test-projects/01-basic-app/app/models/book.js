@@ -1,7 +1,6 @@
 import Model, { belongsTo } from '@ember-data/model';
 
-export default Model.extend({
-
-  user: belongsTo()
-
-});
+export default class BookModel extends Model {
+  @belongsTo('user')
+  user;
+}

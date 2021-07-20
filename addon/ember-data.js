@@ -73,7 +73,7 @@ export function discoverEmberDataModels() {
 
   let emberDataModels = getDsModels();
   Models = {};
-
+debugger;
   Object.keys(emberDataModels).forEach(modelName => {
     let model = emberDataModels[modelName];
     let attrs = {};

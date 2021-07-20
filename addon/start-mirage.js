@@ -18,7 +18,7 @@ import assert from "./assert";
 */
 export default function startMirage(
   owner,
-  { env, baseConfig, testConfig, makeServer } = {}
+  { env, testConfig, makeServer } = {}
 ) {
   if (!env || !makeServer) {
     if (!owner) {
@@ -38,11 +38,11 @@ export default function startMirage(
   let environment = env.environment;
   let mirageEnvironment = env['ember-mirage'] || {};
   let modules = readModules(env.modulePrefix);
-  let options = Object.assign(modules, {
+  let options = {
+    ...modules,
     environment,
-    routes: baseConfig,
     testConfig,
-  });
+  };
   options.trackRequests = mirageEnvironment.trackRequests;
   options.inflector = { singularize, pluralize };
 
