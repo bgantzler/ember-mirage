@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-import {inject as service} from '@ember/service';
-import {action} from '@ember/object';
-import {tracked} from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class CrudDemoController extends Controller {
   @service
@@ -12,11 +12,11 @@ export default class CrudDemoController extends Controller {
 
   @action
   async createUser() {
-    let name = this.newName
+    debugger;
+    let name = this.newName;
 
-    await this.store
-      .createRecord('user', { name })
-      .save();
+    let model = this.store.createRecord('user', { name });
+    await model.save();
 
     this.newName = '';
   }

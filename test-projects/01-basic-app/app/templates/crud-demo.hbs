@@ -8,13 +8,12 @@
 
 {{else}}
 
-  {{#each @model.data as |user|}}
-    {{log "user" user}}
+  {{#each @model as |user|}}
     <div data-test-id="user">
-      <form {{on 'submit' (fn this.updateUser user)}}>
+      <div>
         <Input value={{user.name}} />
-        <button>Save</button>
-        <button {{on 'click' (fn this.deleteUser user)}}>Delete</button>
+        <button data-test-button-save type="button" {{on 'click' (fn this.updateUser user)}}>Save</button>
+        <button data-test-button-delete type="button" {{on 'click' (fn this.deleteUser user)}}>Delete</button>
         <span>
           {{#if user.isSaving}}
             Saving...
@@ -22,7 +21,7 @@
             Saved
           {{/if}}
         </span>
-      </form>
+      </div>
     </div>
   {{/each}}
 
@@ -31,15 +30,15 @@
 <hr>
 
 <div>
-  <form {{on 'submit' this.createUser}}>
+  <div>
     <div>
       <Input aria-label="Name" value={{this.newName}} placeholder='Name' />
     </div>
 
     <div>
-      <button data-test-button>
+      <button data-test-button-create type="button" {{on 'click' this.createUser}}>
         Create a new user
       </button>
     </div>
-  </form>
+  </div>
 </div>

@@ -6,15 +6,18 @@ export default class ModuleCountController extends Controller {
   environment = ENV.environment;
 
   get mirageModules() {
-    return Object.keys(requirejs.entries)
-      .filter(key => key.match('^ember-mirage'));
+    return Object.keys(requirejs.entries).filter((key) =>
+      key.match('^ember-mirage')
+    );
   }
 
   get otherIncludedModules() {
-    return Object.keys(requirejs.entries)
-      .filter(key => {
-        return key.match('^pretender') || key.match('^lodash') || key.match('initializers/ember-mirage');
-      });
+    return Object.keys(requirejs.entries).filter((key) => {
+      return (
+        key.match('^pretender') ||
+        key.match('^lodash') ||
+        key.match('initializers/ember-mirage')
+      );
+    });
   }
 }
-

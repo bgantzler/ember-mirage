@@ -1,3 +1,3 @@
-import {Model} from 'miragejs';
+import { Model } from 'miragejs';
 
 export default Model.extend({});

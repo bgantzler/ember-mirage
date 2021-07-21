@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
-import fetch from 'fetch';
+import { inject as service } from '@ember/service';
 
 export default class CrudDemoRoute extends Route {
+  @service
+  store;
 
   async model() {
     debugger;
-    let response = await fetch('/users');
-    return  response.json();
+    return this.store.findAll('user');
   }
 }
