@@ -20,7 +20,8 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "test:fastboot": "qunit fastboot-tests/**/*.js"
   },
   "dependencies": {
     "miragejs": "^0.1.41",
@@ -38,6 +39,7 @@
     "ember-cli-app-version": "*",
     "ember-cli-babel": "*",
     "ember-cli-dependency-checker": "*",
+    "ember-cli-fastboot": "*",
     "ember-cli-htmlbars": "*",
     "ember-cli-inject-live-reload": "*",
     "ember-cli-sri": "*",
@@ -58,6 +60,7 @@
     "eslint-plugin-node": "*",
     "eslint-plugin-prettier": "*",
     "faker": "*",
+    "fastboot": "*",
     "loader.js": "*",
     "npm-run-all": "*",
     "prettier": "*",
