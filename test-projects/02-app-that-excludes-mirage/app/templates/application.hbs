@@ -1,7 +1,19 @@
-{{page-title 'BasicApp'}}
+<h2 id='title'>Welcome to Ember</h2>
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+{{#if this.wifi.isConnected}}
+  <p data-test-initializer>We ran the initializer</p>
+{{/if}}
 
-{{outlet}}
+<p>
+  Mirage modules in project:
+  <span data-test-id='mirage-module-count'>
+    {{this.mirageModules.length}}
+  </span>
+</p>
+
+<p>
+  Other modules in project:
+  <span data-test-id='other-module-count'>
+    {{this.otherIncludedModules.length}}
+  </span>
+</p>
