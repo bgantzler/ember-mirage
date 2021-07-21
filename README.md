@@ -1,7 +1,12 @@
+https://github.com/ember-cli/ember-load-initializers/blob/master/addon/index.ts
+
+
 ember-mirage
 ==============================================================================
 
-[Short description of the addon.]
+This addon provides test helpers to allow you to easily setup a mirage server for your tests.
+It also provide the ability to have your models, serializers, factories, etc in separate files 
+within the proper directories without having to manage the imports yourself. 
 
 
 Compatibility
