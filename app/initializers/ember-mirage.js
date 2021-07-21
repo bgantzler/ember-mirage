@@ -16,14 +16,16 @@ export default {
   name: 'ember-mirage',
   initialize(application) {
     if (makeServer) {
-      application.register('mirage:make-server', makeServer, { instantiate: false });
+      application.register('mirage:make-server', makeServer, {
+        instantiate: false,
+      });
     }
 
     ENV['ember-mirage'] = ENV['ember-mirage'] || {};
     if (_shouldUseMirage(ENV.environment, ENV['ember-mirage'])) {
       startMirage(ENV);
     }
-  }
+  },
 };
 
 export function startMirage(env = ENV) {

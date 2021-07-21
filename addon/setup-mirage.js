@@ -20,7 +20,7 @@ export default function setupMirage(hooks = self, options) {
       );
     }
 
-    this.server = startMirage(this.owner, { testConfig: options} );
+    this.server = startMirage(this.owner, { testConfig: options });
   });
 
   hooks.afterEach(function () {

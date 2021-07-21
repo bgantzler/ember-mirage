@@ -1,6 +1,6 @@
 import readModules from './utils/read-modules';
 import { singularize, pluralize } from 'ember-inflector';
-import assert from "./assert";
+import assert from './assert';
 
 /**
   Helper to start mirage. This should not be called directly. In rfc232/rfc268
@@ -29,10 +29,7 @@ export default function startMirage(
 
     // These are set from `<app>/initializers/ember-mirage`
     makeServer = makeServer || owner.resolveRegistration('mirage:make-server');
-    assert(
-      'makeServer was not properly registered',
-      makeServer
-    );
+    assert('makeServer was not properly registered', makeServer);
   }
 
   let environment = env.environment;

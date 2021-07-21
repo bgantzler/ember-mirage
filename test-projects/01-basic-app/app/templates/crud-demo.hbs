@@ -1,19 +1,28 @@
-{{page-title "CrudDemo"}}
+{{page-title 'CrudDemo'}}
 
 {{#if this.error}}
 
   <p class='error'>
-    There was an error: <span>{{this.error}}</span>
+    There was an error:
+    <span>{{this.error}}</span>
   </p>
 
 {{else}}
 
   {{#each @model as |user|}}
-    <div data-test-id="user">
+    <div data-test-id='user'>
       <div>
         <Input @value={{user.name}} />
-        <button data-test-button-save type="button" {{on 'click' (fn this.updateUser user)}}>Save</button>
-        <button data-test-button-delete type="button" {{on 'click' (fn this.deleteUser user)}}>Delete</button>
+        <button
+          data-test-button-save
+          type='button'
+          {{on 'click' (fn this.updateUser user)}}
+        >Save</button>
+        <button
+          data-test-button-delete
+          type='button'
+          {{on 'click' (fn this.deleteUser user)}}
+        >Delete</button>
         <span>
           {{#if user.isSaving}}
             Saving...
@@ -27,16 +36,20 @@
 
 {{/if}}
 
-<hr>
+<hr />
 
 <div>
   <div>
     <div>
-      <Input aria-label="Name" @value={{this.newName}} placeholder='Name' />
+      <Input aria-label='Name' @value={{this.newName}} placeholder='Name' />
     </div>
 
     <div>
-      <button data-test-button-create type="button" {{on 'click' this.createUser}}>
+      <button
+        data-test-button-create
+        type='button'
+        {{on 'click' this.createUser}}
+      >
         Create a new user
       </button>
     </div>

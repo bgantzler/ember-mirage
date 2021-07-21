@@ -19,7 +19,18 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'node/no-extraneous-require': [
+      'error',
+      {
+        allowModules: [
+          'broccoli-merge-trees',
+          'broccoli-funnel',
+          'broccoli-file-creator',
+        ],
+      },
+    ],
+  },
   overrides: [
     // node files
     {
