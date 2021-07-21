@@ -1,12 +1,14 @@
 import { createServer } from 'miragejs';
-import { discoverEmberDataModels } from 'ember-mirage';
+import {
+  discoverEmberDataModels,
+  applyEmberDataSerializers,
+} from 'ember-mirage';
 
 export default function makeServer(config) {
   let finalConfig = {
     ...config,
     models: { ...discoverEmberDataModels(), ...config.models },
-    // serializers: applyEmberDataSerializers(config.serializers),
-    serializers: config.serializers,
+    serializers: applyEmberDataSerializers(config.serializers),
     routes,
   };
 
@@ -15,4 +17,5 @@ export default function makeServer(config) {
 
 function routes() {
   this.resource('users');
+  this.resource('authors');
 }
