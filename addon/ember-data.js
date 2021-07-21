@@ -8,18 +8,15 @@ import {
   Model,
   belongsTo,
   hasMany,
-  _utilsInflectorCamelize as camelize
+  _utilsInflectorCamelize as camelize,
 } from 'miragejs';
-import EmberDataSerializer from "ember-mirage/serializers/ember-data-serializer";
+import EmberDataSerializer from 'ember-mirage/serializers/ember-data-serializer';
 
-const {
-  modulePrefix,
-  podModulePrefix
-} = config;
+const { modulePrefix, podModulePrefix } = config;
 
 // Caches
 let DsModels, Models;
-let DsSerializers, Serializers
+let DsSerializers, Serializers;
 
 /**
  * Get all ember data models under the app's namespaces
@@ -36,7 +33,10 @@ export function getDsModels() {
 
   let moduleMap = requirejs.entries;
   let classicModelMatchRegex = new RegExp(`^${modulePrefix}/models/(.*)$`, 'i');
-  let podModelMatchRegex = new RegExp(`^${podModulePrefix || modulePrefix}/(.*)/model$`, 'i');
+  let podModelMatchRegex = new RegExp(
+    `^${podModulePrefix || modulePrefix}/(.*)/model$`,
+    'i'
+  );
 
   DsModels = {};
 
@@ -44,18 +44,18 @@ export function getDsModels() {
     return DsModels;
   }
 
-  Object.keys(moduleMap)
-    .forEach((path) => {
-      let matches = path.match(classicModelMatchRegex) || path.match(podModelMatchRegex);
-      if (matches && matches[1]) {
-        let modelName = matches[1];
+  Object.keys(moduleMap).forEach((path) => {
+    let matches =
+      path.match(classicModelMatchRegex) || path.match(podModelMatchRegex);
+    if (matches && matches[1]) {
+      let modelName = matches[1];
 
-        let model = require(path, null, null, true).default;
-        if (isDsModel(model)) {
-          DsModels[modelName] = model;
-        }
+      let model = require(path, null, null, true).default;
+      if (isDsModel(model)) {
+        DsModels[modelName] = model;
       }
-    });
+    }
+  });
 
   return DsModels;
 }
@@ -73,8 +73,8 @@ export function discoverEmberDataModels() {
 
   let emberDataModels = getDsModels();
   Models = {};
-debugger;
-  Object.keys(emberDataModels).forEach(modelName => {
+
+  Object.keys(emberDataModels).forEach((modelName) => {
     let model = emberDataModels[modelName];
     let attrs = {};
 
@@ -121,26 +121,33 @@ export function getDsSerializers() {
   }
 
   let moduleMap = requirejs.entries;
-  let classicSerializerMatchRegex = new RegExp(`^${modulePrefix}/serializers/(.*)$`, 'i');
-  let podSerializerMatchRegex = new RegExp(`^${podModulePrefix || modulePrefix}/(.*)/serializer$`, 'i');
+  let classicSerializerMatchRegex = new RegExp(
+    `^${modulePrefix}/serializers/(.*)$`,
+    'i'
+  );
+  let podSerializerMatchRegex = new RegExp(
+    `^${podModulePrefix || modulePrefix}/(.*)/serializer$`,
+    'i'
+  );
 
-  DsSerializers = {}
+  DsSerializers = {};
 
   if (!hasEmberData) {
     return DsSerializers;
   }
 
-  Object.keys(moduleMap)
-    .forEach((path) => {
-      let matches = path.match(classicSerializerMatchRegex) || path.match(podSerializerMatchRegex);
-      if (matches && matches[1]) {
-        let serializerName = matches[1];
+  Object.keys(moduleMap).forEach((path) => {
+    let matches =
+      path.match(classicSerializerMatchRegex) ||
+      path.match(podSerializerMatchRegex);
+    if (matches && matches[1]) {
+      let serializerName = matches[1];
 
-        let serializer = require(path, null, null, true).default;
-        // in mirage, registering models takes care of camelize, serializers do not
-        DsSerializers[camelize(serializerName)] = serializer;
-      }
-    });
+      let serializer = require(path, null, null, true).default;
+      // in mirage, registering models takes care of camelize, serializers do not
+      DsSerializers[camelize(serializerName)] = serializer;
+    }
+  });
 
   return DsSerializers;
 }
@@ -163,34 +170,43 @@ export function applyEmberDataSerializers(mirageSerializers = {}) {
   // so if there are any mirage serializers with no ED counterpart, they are in the list
   Serializers = mirageSerializers;
 
-  Object.keys(emberDataSerializers).forEach(serializerName => {
+  Object.keys(emberDataSerializers).forEach((serializerName) => {
     let dsSerializer = emberDataSerializers[serializerName];
 
     // Seems I have to create it to get access to some of the properties
-    dsSerializer = dsSerializer.create ? dsSerializer.create() : new dsSerializer;
+    dsSerializer = dsSerializer.create
+      ? dsSerializer.create()
+      : new dsSerializer();
 
     let transforms;
     let primaryKey = dsSerializer.primaryKey;
     let attrs = dsSerializer.attrs;
     if (primaryKey || attrs) {
-
-      let Serializer = mirageSerializers[serializerName] || mirageSerializers.application || EmberDataSerializer;
+      let Serializer =
+        mirageSerializers[serializerName] ||
+        mirageSerializers.application ||
+        EmberDataSerializer;
 
       if (attrs) {
-        let serializer = Serializer.create ? Serializer.create() : new Serializer;
+        let serializer = Serializer.create
+          ? Serializer.create()
+          : new Serializer();
 
         transforms = serializer.transforms || {};
 
-        Object.keys(attrs).forEach(key => {
+        Object.keys(attrs).forEach((key) => {
           let transform = attrs[key];
-          let serializerTransform = serializer.transforms ? serializer.transforms[key] : {};
-          let resolvedTransform = typeof attrs[key] === 'string'
-            ? {
-              key: attrs[key]
-            }
-            : {
-              key: attrs[key].key,
-            };
+          let serializerTransform = serializer.transforms
+            ? serializer.transforms[key]
+            : {};
+          let resolvedTransform =
+            typeof attrs[key] === 'string'
+              ? {
+                  key: attrs[key],
+                }
+              : {
+                  key: attrs[key].key,
+                };
 
           if (transform.serialize !== undefined) {
             resolvedTransform.deserialize = transform.serialize;
@@ -200,13 +216,16 @@ export function applyEmberDataSerializers(mirageSerializers = {}) {
             resolvedTransform.serialize = transform.deserialize;
           }
 
-          transforms[key] = Object.assign(resolvedTransform, serializerTransform);
+          transforms[key] = Object.assign(
+            resolvedTransform,
+            serializerTransform
+          );
         });
       }
 
       Serializers[serializerName] = Serializer.extend({
         primaryKey,
-        transforms
+        transforms,
       });
     }
   });

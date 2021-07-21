@@ -12,7 +12,6 @@ export default class CrudDemoController extends Controller {
 
   @action
   async createUser() {
-    debugger;
     let name = this.newName;
 
     let model = this.store.createRecord('user', { name });

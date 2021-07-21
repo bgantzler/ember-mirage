@@ -23,7 +23,6 @@ module('Acceptance | Crud demo', function (hooks) {
   });
 
   test('I can create a new user', async function (assert) {
-    debugger;
     this.server.create('user', 1);
 
     await visit('/crud-demo');
@@ -64,10 +63,10 @@ module('Acceptance | Crud demo', function (hooks) {
       },
       404
     );
-    debugger;
+
     await visit('/crud-demo');
-    debugger;
-    assert.equal(find('[data-test-error]').innerText, "improper auth");
+
+    assert.equal(find('[data-test-error]').innerText, 'improper auth');
     assert.equal(currentRouteName(), 'crud-demo_error');
   });
 });

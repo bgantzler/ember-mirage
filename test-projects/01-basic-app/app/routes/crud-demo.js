@@ -6,7 +6,6 @@ export default class CrudDemoRoute extends Route {
   store;
 
   async model() {
-    debugger;
     return this.store.findAll('user');
   }
 }

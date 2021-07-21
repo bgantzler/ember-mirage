@@ -31,7 +31,6 @@ module('Acceptance | starting mirage', function (hooks) {
     setupTest(hooks);
 
     test('it does not autostart but can be started manually', async function (assert) {
-      debugger;
       assert.equal(
         window.server,
         undefined,
@@ -51,7 +50,6 @@ module('Acceptance | starting mirage', function (hooks) {
 
     module('nested mirage modules', function () {
       test('it works', async function (assert) {
-        debugger;
         const server = startMirage(this.owner);
         const model = server.create('nested/thing');
         dynamicAfterEach = () => server.shutdown();
@@ -71,7 +69,6 @@ module('Acceptance | starting mirage', function (hooks) {
 
       // factories and fixtures have to be tested separately
       test('fixtures support', async function (assert) {
-        debugger;
         const server = startMirage(this.owner);
         dynamicAfterEach = () => server.shutdown();
 
@@ -92,7 +89,6 @@ module('Acceptance | starting mirage', function (hooks) {
       setupMirage(hooks);
 
       test('it works', async function (assert) {
-        debugger;
         assert.ok(this.server, 'There is a server');
         assert.ok(window.server, 'There is a global server');
         dynamicAfterEach = () => {
@@ -100,7 +96,7 @@ module('Acceptance | starting mirage', function (hooks) {
           assert.notOk(window.server, 'The global server is gone');
         };
 
-        server.create('user');
+        this.server.create('user');
         await visit('/crud-demo');
 
         assert.equal(currentRouteName(), 'crud-demo');
@@ -117,7 +113,6 @@ module('Acceptance | starting mirage', function (hooks) {
     setupTest(hooks);
 
     test('it autostarts', async function (assert) {
-      debugger;
       assert.ok(this.server, 'There is a server');
       assert.ok(window.server, 'There is a global server');
       dynamicAfterEach = () => {
@@ -125,7 +120,7 @@ module('Acceptance | starting mirage', function (hooks) {
         assert.notOk(window.server, 'The global server is gone');
       };
 
-      server.create('user');
+      this.server.create('user');
       await visit('/crud-demo');
 
       assert.equal(currentRouteName(), 'crud-demo');

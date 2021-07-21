@@ -5,15 +5,14 @@ import EmberObject from '@ember/object';
 // An object we can register with the container to ensure that mirage is shut
 // down when the application is destroyed
 // TODO Look into destroyables to replace EmberObject https://github.com/ember-polyfills/ember-destroyable-polyfill
+//  eslint-disable-next-line ember/no-classic-classes
 const MirageShutdown = EmberObject.extend({
   testContext: null,
 
   willDestroy() {
-    debugger;
-    let testContext = this.get('testContext');
-    testContext.server.shutdown();
-    delete testContext.server;
-  }
+    this.testContext.server.shutdown();
+    delete this.testContext.server;
+  },
 });
 /**
   If we are running an rfc232/rfc268 test then we want to support the
@@ -28,9 +27,8 @@ const MirageShutdown = EmberObject.extend({
 export function initialize(appInstance) {
   let testContext = getContext();
   if (testContext) {
-    let {
-      'ember-mirage': { autostart } = {}
-    } = appInstance.resolveRegistration('config:environment');
+    let { 'ember-mirage': { autostart } = {} } =
+      appInstance.resolveRegistration('config:environment');
 
     if (autostart) {
       let server = startMirage(appInstance);
@@ -47,5 +45,5 @@ export function initialize(appInstance) {
 }
 
 export default {
-  initialize
+  initialize,
 };

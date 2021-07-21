@@ -8,7 +8,6 @@ module('Acceptance | Fixtures', function (hooks) {
   setupMirage(hooks);
 
   test('I can use fixtures', async function (assert) {
-    debugger;
     this.server.loadFixtures();
 
     await visit('/crud-demo');
