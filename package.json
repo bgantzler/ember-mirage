@@ -1,12 +1,16 @@
 {
   "name": "ember-mirage",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "A ember wrapper for mirageJS",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "mirageJS",
+    "pretender",
+    "server",
+    "testing"
   ],
-  "repository": "",
-  "license": "MIT",
+  "repository": "https://github.com/bgantzler/ember-mirage",
+  "license": "(MIT OR Apache-2.0)",
   "author": "",
   "directories": {
     "doc": "doc",
@@ -86,12 +90,16 @@
     "webpack": "^5.44.0"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "10.* || 12.* || >= 14.*"
   },
   "ember": {
     "edition": "octane"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "volta": {
+    "node": "10.20.1",
+    "yarn": "1.22.4"
   }
 }
