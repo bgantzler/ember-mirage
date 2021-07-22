@@ -90,7 +90,7 @@
     "webpack": "^5.44.0"
   },
   "engines": {
-    "node": "10.* || 12.* || >= 14.*"
+    "node": "12.* || >= 14.*"
   },
   "ember": {
     "edition": "octane"
@@ -99,7 +99,7 @@
     "configPath": "tests/dummy/config"
   },
   "volta": {
-    "node": "10.20.1",
+    "node": "12.14.0",
     "yarn": "1.22.4"
   }
 }
