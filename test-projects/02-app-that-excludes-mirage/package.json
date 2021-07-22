@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "miragejs": "^0.1.41",
-    "ember-mirage": "git+https://github.com/bgantzler/ember-mirage#*"
+    "ember-mirage": "*"
   },
   "devDependencies": {
     "@ember/optional-features": "*",
