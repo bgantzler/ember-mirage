@@ -5,6 +5,7 @@ export default EmberDataSerializer.extend({
   root: false,
   embed: true,
 
+  // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
   transforms: {
     books: { serialize: false },
   },
