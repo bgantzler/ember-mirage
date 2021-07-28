@@ -1,4 +1,4 @@
-https://github.com/ember-cli/ember-load-initializers/blob/master/addon/index.ts
+This is currently an experiment, please use https://github.com/miragejs/ember-cli-mirage 
 
 # Ember Mirage
 
