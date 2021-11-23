@@ -13,7 +13,7 @@ for package in "01-basic-app" "02-app-that-excludes-mirage"; do
     popd > /dev/null
 done
 
-# These packages get to depend on ember-cli-mirage
+# These packages get to depend on ember-mirage
 for package in "01-basic-app" "02-app-that-excludes-mirage"; do
     pushd ./test-projects/$package/node_modules > /dev/null
     rm -rf ./ember-mirage

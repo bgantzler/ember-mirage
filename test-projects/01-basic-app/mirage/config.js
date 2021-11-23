@@ -4,7 +4,7 @@ import {
   applyEmberDataSerializers,
 } from 'ember-mirage';
 
-export default function makeServer(config) {
+export default function (config) {
   let finalConfig = {
     ...config,
     models: { ...discoverEmberDataModels(), ...config.models },
