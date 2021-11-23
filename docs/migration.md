@@ -52,6 +52,13 @@ export default function(config) {
 }
 ```
 
+The `...discoverEmberDataModels()` is discovering the ember data models. This was on by default in `ember-cli-mirage`.
+
+If you have any environment variables in your `environment/config.js` make sure you change the `ember-cli-mirage` 
+to `ember-mirage`. All environment variables are still supported except `discoverEmberDataModels`. 
+If you had that set to false, just remove the `...discoverEmberDataModels()` from the `mirage/config.js` 
+
+
 
 
 The following are no longer exported. If you are using them from ember-cl-mirage, change the import to the below 
