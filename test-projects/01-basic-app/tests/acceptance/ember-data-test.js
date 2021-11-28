@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import { Model } from 'miragejs';
 import { modelFor } from 'ember-mirage/ember-data';
-import { setupMirage } from 'ember-mirage';
+import { setupMirage } from 'ember-mirage/test-support';
 
 const CustomTag = Model.extend();
 CustomTag.__isCustom__ = true;

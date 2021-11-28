@@ -44,9 +44,10 @@ export default function startMirage(
   options.inflector = { singularize, pluralize };
 
   let server = makeServer(options);
+  server.logging = false;
   if (
-    typeof location !== 'undefined' &&
-    location.search.indexOf('mirageLogging') !== -1
+    typeof window.location !== 'undefined' &&
+    window.location.search.indexOf('mirageLogging') !== -1
   ) {
     server.logging = true;
   }

@@ -1,6 +1,17 @@
 import startMirage from 'ember-mirage/start-mirage';
 import { settled } from '@ember/test-helpers';
 
+// import { dependencySatisfies } from '@embroider/macros';
+
+console.log('Test support is running');
+
+// if (dependencySatisfies('ember-qunit', '*')) {
+window.QUnit?.config.urlConfig.push({
+  id: 'mirageLogging',
+  label: 'Mirage logging',
+});
+// }
+
 /**
   Used to set up mirage for a test. Must be called after one of the
   `ember-qunit` `setup*Test()` methods. It starts the server and sets
