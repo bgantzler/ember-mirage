@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import { setupMirage } from 'ember-mirage';
+import { setupMirage } from 'ember-mirage/test-support';
 
 import ENV from 'basic-app/config/environment';
 import fetch from 'fetch';

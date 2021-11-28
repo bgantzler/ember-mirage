@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import { setupMirage } from 'ember-mirage';
+import { setupMirage } from 'ember-mirage/test-support';
 import { visit, findAll } from '@ember/test-helpers';
 
 module('Acceptance | Fixtures', function (hooks) {

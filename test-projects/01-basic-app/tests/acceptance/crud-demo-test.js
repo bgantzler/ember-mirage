@@ -8,7 +8,7 @@ import {
   fillIn,
   click,
 } from '@ember/test-helpers';
-import { setupMirage } from 'ember-mirage';
+import { setupMirage } from 'ember-mirage/test-support';
 
 module('Acceptance | Crud demo', function (hooks) {
   setupTest(hooks);

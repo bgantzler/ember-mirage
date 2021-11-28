@@ -11,10 +11,10 @@ The following is no longer re-exported
 * JSONAPISerializer, ActiveModelSerializer, RestSerializer
 
 
-You adjust for the re-exports no longer happeneing by doing the following: That should fix almost all the potential import problems.
-* Replace all `ember-cli-mirage` with `miragejs`.
-* Then replace all `import { setupMirage } from 'miragejs';` (Adjust for syntax if you are not using standard prettier) 
-with `import { setupMirage } from 'ember-mirage';`
+You adjust for the re-exports no longer happening by doing the following: That should fix almost all the potential import problems.
+* Replace all `ember-cli-mirage` with `miragejs` in the mirage directory only.
+* Then replace all `import { setupMirage } from 'ember-cli-mirage/test-support';` (Adjust for syntax if you are not using standard prettier) 
+with `import { setupMirage } from 'ember-mirage/test-support';`
 
 If your old `mirage/config.js` just exports a default function of all your routes, example
 
