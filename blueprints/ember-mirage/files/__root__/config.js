@@ -1,6 +1,6 @@
 import { createServer } from 'miragejs';
 
-export default function makeServer(config) {
+export default function(config) {
   let finalConfig = {
     factories: config.factories,
     models: config.models,
