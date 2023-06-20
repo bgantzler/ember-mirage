@@ -1,53 +1,40 @@
-import readModules from './utils/read-modules';
+import assert from "./assert"
 import { singularize, pluralize } from 'ember-inflector';
-import assert from './assert';
 
-/**
-  Helper to start mirage. This should not be called directly. In rfc232/rfc268
-  tests, use `setupMirage()` or the `autoboot` option in the addon config
-  in the environment. In legacy tests that call `startMirage` directly, this
-  should be called via the `startMirage` method exported from
-  `<app>/initializers/ember-cli-mirage`.
+export default function startMirage(makeServer, { owner, env } = {}) {
+  debugger;
+  assert(
+    'There is no makeServer function passed to startMirage',
+    makeServer
+  );
 
-  This is intended to be called with only the `owner` argument (which would be
-  `this.owner` in an rfc232/rfc268 test, or the application instance if called
-  from an instance initializer). However, to support the legacy initializer, it
-  can instead accept a hash of the environment and config objects.
+  assert(
+    'Mirage config default exported function must at least one parameter',
+    makeServer.length > 0
+  );
 
-  @hide
-*/
-export default function startMirage(
-  owner,
-  { env, testConfig, makeServer } = {}
-) {
-  if (!env || !makeServer) {
-    if (!owner) {
-      throw new Error('You must pass `owner` to startMirage()');
-    }
-
-    env = env || owner.resolveRegistration('config:environment');
-
-    // These are set from `<app>/initializers/ember-mirage`
-    makeServer = makeServer || owner.resolveRegistration('mirage:make-server');
-    assert('makeServer was not properly registered', makeServer);
+  if (!env) {
+    assert(
+      'You must pass `owner` to startMirage() to lookup environment',
+      owner
+    );
+    env = owner.resolveRegistration('config:environment');
   }
 
   let environment = env.environment;
-  let mirageEnvironment = env['ember-mirage'] || {};
-  let modules = readModules(env.modulePrefix);
+
   let options = {
-    ...modules,
+    env,
     environment,
-    testConfig,
+    inflector: { singularize, pluralize }
   };
-  options.trackRequests = mirageEnvironment.trackRequests;
-  options.inflector = { singularize, pluralize };
 
   let server = makeServer(options);
-  server.logging = false;
+
+  // Check to see if mirageLogging is on the URL. If so, enable logging on the server
   if (
-    typeof window.location !== 'undefined' &&
-    window.location.search.indexOf('mirageLogging') !== -1
+    typeof location !== 'undefined' &&
+    location.search.indexOf('mirageLogging') !== -1
   ) {
     server.logging = true;
   }

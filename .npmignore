@@ -8,15 +8,12 @@
 # misc
 /.bowerrc
 /.editorconfig
-/.ember-cli
+/.ember-cli.js
 /.env*
-/.eslintcache
 /.eslintignore
 /.eslintrc.js
 /.git/
 /.gitignore
-/.prettierignore
-/.prettierrc.js
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
@@ -33,8 +30,3 @@
 /.node_modules.ember-try/
 /bower.json.ember-try
 /package.json.ember-try
-
-/test-projects
-/.idea
-/scripts
-/.husky

@@ -6,13 +6,12 @@
 
 # dependencies
 /bower_components/
-**/node_modules/
+/node_modules/
 
 # misc
 /.env*
 /.pnp*
 /.sass-cache
-/.eslintcache
 /connect.lock
 /coverage/
 /libpeerconnection.log
