@@ -2,7 +2,6 @@ import assert from "./assert"
 import { singularize, pluralize } from 'ember-inflector';
 
 export default function startMirage(makeServer, { owner, env } = {}) {
-  debugger;
   assert(
     'There is no makeServer function passed to startMirage',
     makeServer
