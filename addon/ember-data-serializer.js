@@ -1,9 +1,9 @@
+import { isFunction } from 'lodash-es';
 import {
   RestSerializer,
   _utilsInflectorCamelize as camelize,
   _utilsInflectorDasherize as dasherize,
 } from 'miragejs';
-import { isFunction } from 'lodash-es';
 import { get } from '@ember/object';
 
 /**
