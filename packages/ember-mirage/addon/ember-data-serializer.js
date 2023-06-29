@@ -1,10 +1,11 @@
+import { get } from '@ember/object';
+
 import { isFunction } from 'lodash-es';
 import {
-  RestSerializer,
   _utilsInflectorCamelize as camelize,
   _utilsInflectorDasherize as dasherize,
+  RestSerializer,
 } from 'miragejs';
-import { get } from '@ember/object';
 
 /**
  * This serializer does not use following mirage properties to control how things are serialized
@@ -114,6 +115,7 @@ let EmberDataSerializer = RestSerializer.extend({
       let foundKey;
       let foundTransform = Object.keys(transforms).find((item) => {
         foundKey = item;
+
         return transforms[item].key === key;
       });
       let transform = foundTransform
@@ -138,6 +140,7 @@ let EmberDataSerializer = RestSerializer.extend({
     let attrs = this._attrsForModel(model);
 
     let newDidSerialize = Object.assign({}, didSerialize);
+
     newDidSerialize[model.modelName] = newDidSerialize[model.modelName] || {};
     newDidSerialize[model.modelName][model.id] = true;
 
@@ -151,10 +154,7 @@ let EmberDataSerializer = RestSerializer.extend({
 
         if (
           associatedResource &&
-          get(
-            newDidSerialize,
-            `${associatedResource.modelName}.${associatedResource.id}`
-          )
+          get(newDidSerialize, `${associatedResource.modelName}.${associatedResource.id}`)
         ) {
           // force it to IDS if we already have serialized it to prevent recursion
           // TODO: However is the end system wants records, we need to send records, so this really should be do records, dont resurse
@@ -172,17 +172,15 @@ let EmberDataSerializer = RestSerializer.extend({
             this._keyForProperty(key) || this.isCollection(associatedResource)
               ? this.keyForRelationship(key)
               : this.keyForEmbeddedRelationship(key);
+
           attrs[formattedKey] = associatedResourceHash;
         } else {
-          let formattedKey =
-            this._keyForProperty(key) || this.keyForRelationshipIds(key);
+          let formattedKey = this._keyForProperty(key) || this.keyForRelationshipIds(key);
 
           if (this.isCollection(associatedResource)) {
-            attrs[formattedKey] =
-              model[`${this._container.inflector.singularize(key)}Ids`];
+            attrs[formattedKey] = model[`${this._container.inflector.singularize(key)}Ids`];
           } else {
-            attrs[formattedKey] =
-              model[`${this._container.inflector.singularize(key)}Id`];
+            attrs[formattedKey] = model[`${this._container.inflector.singularize(key)}Id`];
           }
         }
       }
@@ -203,8 +201,7 @@ let EmberDataSerializer = RestSerializer.extend({
     }
 
     return (
-      this._keyForProperty(attr) ||
-      RestSerializer.prototype.keyForAttribute.apply(this, arguments)
+      this._keyForProperty(attr) || RestSerializer.prototype.keyForAttribute.apply(this, arguments)
     );
   },
 
@@ -240,6 +237,7 @@ let EmberDataSerializer = RestSerializer.extend({
     // was it not wrapped when serialized?
     if (this.root === false) {
       let p = {};
+
       p[this.type] = payload;
       payload = p;
     }
@@ -269,10 +267,12 @@ let EmberDataSerializer = RestSerializer.extend({
       if (attrKey !== this.primaryKey) {
         let transform = this.getTransformForNormalize(attrKey);
         let key = transform.key || attrKey;
+
         if (this.normalizeIds) {
           if (belongsToKeys.includes(key)) {
             let association = belongsToAssociations[key];
             let associationModel = association.modelName;
+
             relationships[dasherize(key)] = {
               data: {
                 type: associationModel,
@@ -288,6 +288,7 @@ let EmberDataSerializer = RestSerializer.extend({
                 id,
               };
             });
+
             relationships[dasherize(key)] = { data };
           } else {
             jsonApiPayload.data.attributes[dasherize(key)] = attrs[attrKey];
