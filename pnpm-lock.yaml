@@ -54,6 +54,9 @@ importers:
       '@ember/optional-features':
         specifier: ^2.0.0
         version: 2.0.0
+      '@embroider/test-setup':
+        specifier: ^3.0.1
+        version: 3.0.1
       '@nullvoxpopuli/eslint-configs':
         specifier: ^3.1.4
         version: 3.1.4(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-ember@11.9.0)(eslint-plugin-qunit@8.0.0)(eslint@8.43.0)(prettier@2.8.8)
@@ -1680,6 +1683,25 @@ packages:
       resolve-package-path: 4.0.3
       semver: 7.5.3
       typescript-memoize: 1.1.1
+
+  /@embroider/test-setup@3.0.1:
+    resolution: {integrity: sha512-t7R2f10iZDSNw3ovWAPM63GRQTu63uihpVh6CvHev5XkLt8B7tdxcxGyO6RbdF5Hu+pbsUu8sD0kAlR1gopmxg==}
+    engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      '@embroider/compat': ^3.0.0
+      '@embroider/core': ^3.0.0
+      '@embroider/webpack': ^3.0.0
+    peerDependenciesMeta:
+      '@embroider/compat':
+        optional: true
+      '@embroider/core':
+        optional: true
+      '@embroider/webpack':
+        optional: true
+    dependencies:
+      lodash: 4.17.21
+      resolve: 1.22.2
+    dev: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.43.0):
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
