@@ -1,5 +1,6 @@
-import startMirage from './start-mirage';
 import { settled } from '@ember/test-helpers';
+
+import startMirage from './start-mirage';
 
 /**
  Used to set up mirage for a test. Must be called after one of the
@@ -15,12 +16,12 @@ export default function setupMirage(hooks = self, options) {
     if (!this.owner) {
       throw new Error(
         'You must call one of the ember-qunit setupTest(),' +
-        ' setupRenderingTest() or setupApplicationTest() methods before' +
-        ' calling setupMirage()'
+          ' setupRenderingTest() or setupApplicationTest() methods before' +
+          ' calling setupMirage()'
       );
     }
 
-    this.server = startMirage(options.makeServer, {owner: this.owner, ...options});
+    this.server = startMirage(options.makeServer, { owner: this.owner, ...options });
   });
 
   hooks.afterEach(function () {
@@ -32,4 +33,3 @@ export default function setupMirage(hooks = self, options) {
     });
   });
 }
-

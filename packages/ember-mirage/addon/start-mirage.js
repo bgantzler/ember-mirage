@@ -1,11 +1,9 @@
-import assert from "./assert"
-import { singularize, pluralize } from 'ember-inflector';
+import { pluralize, singularize } from 'ember-inflector';
+
+import assert from './assert';
 
 export default function startMirage(makeServer, { owner, env } = {}) {
-  assert(
-    'There is no makeServer function passed to startMirage',
-    makeServer
-  );
+  assert('There is no makeServer function passed to startMirage', makeServer);
 
   assert(
     'Mirage config default exported function must at least one parameter',
@@ -13,10 +11,7 @@ export default function startMirage(makeServer, { owner, env } = {}) {
   );
 
   if (!env) {
-    assert(
-      'You must pass `owner` to startMirage() to lookup environment',
-      owner
-    );
+    assert('You must pass `owner` to startMirage() to lookup environment', owner);
     env = owner.resolveRegistration('config:environment');
   }
 
@@ -25,16 +20,13 @@ export default function startMirage(makeServer, { owner, env } = {}) {
   let options = {
     env,
     environment,
-    inflector: { singularize, pluralize }
+    inflector: { singularize, pluralize },
   };
 
   let server = makeServer(options);
 
   // Check to see if mirageLogging is on the URL. If so, enable logging on the server
-  if (
-    typeof location !== 'undefined' &&
-    location.search.indexOf('mirageLogging') !== -1
-  ) {
+  if (typeof location !== 'undefined' && location.search.indexOf('mirageLogging') !== -1) {
     server.logging = true;
   }
 
