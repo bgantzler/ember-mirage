@@ -10,7 +10,8 @@
   "author": "Brian Gantzler",
   "files": [
     "addon",
-    "addon-test-support"
+    "addon-test-support",
+    "index.js"
   ],
   "scripts": {
     "lint": "pnpm -w exec turbo _:lint --filter ember-mirage",
