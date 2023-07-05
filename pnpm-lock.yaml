@@ -135,6 +135,12 @@ importers:
 
   test-apps/01-sample-app:
     dependencies:
+      '@faker-js/faker':
+        specifier: ^7.6.0
+        version: 7.6.0
+      ember-mirage:
+        specifier: workspace:*
+        version: link:../../packages/ember-mirage
       miragejs:
         specifier: ^0.1.47
         version: 0.1.47
@@ -2148,6 +2154,11 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@faker-js/faker@7.6.0:
+    resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: false
+
   /@glimmer/component@1.1.2(@babel/core@7.22.5):
     resolution: {integrity: sha512-XyAsEEa4kWOPy+gIdMjJ8XlzA3qrGH55ZDv6nA16ibalCR17k74BI0CztxuRds+Rm6CtbUVgheCVlcCULuqD7A==}
     engines: {node: 6.* || 8.* || >= 10.*}
@@ -2156,7 +2167,7 @@ packages:
       '@glimmer/env': 0.1.7
       '@glimmer/util': 0.44.0
       broccoli-file-creator: 2.1.1
-      broccoli-merge-trees: 4.2.0
+      broccoli-merge-trees: 3.0.2
       ember-cli-babel: 7.26.11
       ember-cli-get-component-path-option: 1.0.0
       ember-cli-is-package-missing: 1.0.0
@@ -5343,7 +5354,7 @@ packages:
       babel-plugin-module-resolver: 3.2.0
       broccoli-babel-transpiler: 7.8.1
       broccoli-debug: 0.6.5
-      broccoli-funnel: 3.0.8
+      broccoli-funnel: 2.0.2
       broccoli-source: 2.1.2
       calculate-cache-key-for-tree: 2.0.0
       clone: 2.1.2
@@ -5353,7 +5364,7 @@ packages:
       fixturify-project: 1.10.0
       resolve-package-path: 3.1.0
       rimraf: 3.0.2
-      semver: 7.5.3
+      semver: 5.7.1
     transitivePeerDependencies:
       - supports-color
 
