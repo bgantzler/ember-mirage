@@ -1,4 +1,4 @@
-import { Model, belongsTo } from 'miragejs';
+import { belongsTo,Model } from 'miragejs';
 
 export default Model.extend({
   lineItemSegment: belongsTo('item-segment'),

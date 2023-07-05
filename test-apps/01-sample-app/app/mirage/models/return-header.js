@@ -1,4 +1,4 @@
-import { Model, belongsTo, hasMany } from 'miragejs';
+import { belongsTo, hasMany,Model } from 'miragejs';
 
 export default Model.extend({
   returnRequest: belongsTo('return-request'),

@@ -1,9 +1,10 @@
 import { createServer } from 'miragejs';
-import addonConfig from './routes/config';
-import mirageModels from './models';
-import mirageSerializers from './serializers';
+
 import factories from './factories';
+import mirageModels from './models';
+import addonConfig from './routes/config';
 import scenariosDefault from './scenarios/default';
+import mirageSerializers from './serializers';
 
 export default function (config) {
   let { environment, trackRequests, inflector } = config;
