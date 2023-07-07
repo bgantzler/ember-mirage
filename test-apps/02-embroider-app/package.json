@@ -1,8 +1,8 @@
 {
-  "name": "ember-mirage-sample",
+  "name": "embroider-app",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ember-mirage-sample goes here",
+  "description": "Small description for embroider-app goes here",
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -17,7 +17,7 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "concurrently 'ember serve -p 4204' 'pnpm _syncPnpm --watch' --names 'tests serve,tests sync deps'",
+    "start": "concurrently 'ember serve -p 4203' 'pnpm _syncPnpm --watch' --names 'tests serve,tests sync deps'",
     "test:ember": "pnpm _syncPnpm; ember test",
     "_syncPnpm": "pnpm sync-dependencies-meta-injected"
   },
@@ -27,14 +27,20 @@
     }
   },
   "dependencies": {
+    "@ember/string": "^3.1.1",
+    "@embroider/macros": "^1.12.2",
     "@faker-js/faker": "^7.6.0",
     "ember-mirage": "workspace:*",
     "miragejs": "^0.1.47"
   },
   "devDependencies": {
+    "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
+    "@embroider/compat": "^3.0.2",
+    "@embroider/core": "^3.0.2",
+    "@embroider/webpack": "^3.0.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "@nullvoxpopuli/eslint-configs": "^3.1.4",
@@ -44,13 +50,13 @@
     "ember-cli-app-version": "^6.0.1",
     "ember-cli-babel": "^7.26.11",
     "ember-cli-dependency-checker": "^3.3.2",
-    "ember-cli-htmlbars": "^6.1.1",
+    "ember-cli-htmlbars": "^6.0.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-data": "~4.9.1",
-    "ember-fetch": "^8.1.2",
+    "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
-    "ember-qunit": "^6.0.0",
+    "ember-qunit": "^5.1.5",
     "ember-resolver": "^10.1.1",
     "ember-source": "~4.9.1",
     "ember-template-lint": "^5.2.0",
@@ -66,15 +72,15 @@
     "prettier": "^2.8.1",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
-    "webpack": "^5.75.0"
+    "webpack": "^5.65.0"
   },
   "engines": {
-    "node": "16.* || >= 18"
-  },
-  "ember": {
-    "edition": "octane"
+    "node": ">= 16"
   },
   "volta": {
     "extends": "../../package.json"
+  },
+  "ember": {
+    "edition": "octane"
   }
 }
