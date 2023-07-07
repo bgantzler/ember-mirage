@@ -4,8 +4,8 @@ import {
   setupTest as upstreamSetupTest,
 } from 'ember-qunit';
 
-import { setupMirage as _setupMirage } from 'ember-mirage';
-import mirageConfig from 'ember-mirage-sample/mirage/config';
+import { setupMirage as _setupMirage } from 'ember-mirage/test-support';
+import { mirageConfig } from 'embroider-app/mirage/config';
 
 export function setupMirage(hooks, options) {
   options = options || {};

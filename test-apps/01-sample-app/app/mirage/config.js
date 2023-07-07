@@ -1,7 +1,7 @@
 import { createServer } from 'miragejs';
 
 import factories from './factories';
-import mirageModels from './models';
+import * as mirageModels from './models';
 import addonConfig from './routes/config';
 import scenariosDefault from './scenarios/default';
 import mirageSerializers from './serializers';

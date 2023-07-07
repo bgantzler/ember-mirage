@@ -1,10 +1,11 @@
-import { currentURL,visit } from '@ember/test-helpers';
+import { currentURL, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 
 import mirageConfig from 'ember-mirage-sample/mirage/config';
-import { setupApplicationTest } from 'ember-mirage-sample/tests/helpers';
-
-import { setupMirage } from 'ember-mirage-sample/tests/test-support/mirage';
+import {
+  setupApplicationTest,
+  setupMirage,
+} from 'ember-mirage-sample/tests/helpers';
 
 module('Acceptance | example test', function (hooks) {
   setupApplicationTest(hooks);
@@ -19,7 +20,7 @@ module('Acceptance | example test', function (hooks) {
   });
 
   module('Test with imported config', function (hooks) {
-    setupMirage(hooks, { makeserver: mirageConfig });
+    setupMirage(hooks, { makeServer: mirageConfig });
     test('visiting /example', async function (assert) {
       await visit('/example');
 

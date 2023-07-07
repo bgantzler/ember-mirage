@@ -1,12 +1,11 @@
 import { currentRouteName, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
 
-import startMirage from 'ember-cli-mirage/start-mirage';
+import { mirageConfig } from 'embroider-app/mirage/config';
+import { startMirage } from 'ember-mirage';
+import { setupMirage, setupTest } from 'embroider-app/tests/helpers';
 import ENV from 'embroider-app/config/environment';
 import NestedThingModel from 'embroider-app/mirage/models/nested/thing';
-
-import { setupMirage } from 'ember-cli-mirage/test-support';
 
 module('Acceptance | Starting mirage', function (hooks) {
   let oldEnv, addonConfig, dynamicAfterEach;
@@ -14,7 +13,7 @@ module('Acceptance | Starting mirage', function (hooks) {
   hooks.beforeEach(function () {
     oldEnv = ENV['ember-cli-mirage'];
     ENV['ember-cli-mirage'] = addonConfig = {};
-    // When running in non-legacy mode we shoud ignore this, so we set it so we
+    // When running in non-legacy mode we should ignore this, so we set it so we
     // can make sure that tests that it doesn't cause the server to start when
     // it shouldn't in the cases that test that
     addonConfig.enabled = true;
@@ -40,7 +39,7 @@ module('Acceptance | Starting mirage', function (hooks) {
         'There is no global server at first'
       );
 
-      let server = startMirage(this.owner);
+      let server = startMirage(mirageConfig, { owner: this.owner, env: ENV });
 
       assert.ok(server, 'There is a server after starting');
       assert.ok(window.server, 'There is a global server after starting');
@@ -55,7 +54,10 @@ module('Acceptance | Starting mirage', function (hooks) {
 
     module('nested mirage modules', function () {
       test('it works', async function (assert) {
-        const server = startMirage(this.owner);
+        const server = startMirage(mirageConfig, {
+          owner: this.owner,
+          env: ENV,
+        });
         const model = server.create('nested/thing');
 
         dynamicAfterEach = () => server.shutdown();
@@ -76,7 +78,10 @@ module('Acceptance | Starting mirage', function (hooks) {
 
       // factories and fixtures have to be tested separately
       test('fixtures support', async function (assert) {
-        const server = startMirage(this.owner);
+        const server = startMirage(mirageConfig, {
+          owner: this.owner,
+          env: ENV,
+        });
 
         dynamicAfterEach = () => server.shutdown();
 

@@ -6,3 +6,5 @@ if (dependencySatisfies('ember-qunit', '*')) {
     label: 'Mirage logging',
   });
 }
+
+export { default as setupMirage } from '../setup-mirage';

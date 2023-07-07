@@ -1,7 +1,5 @@
 import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
-
-import { setupMirage } from 'ember-cli-mirage/test-support';
+import { setupMirage, setupTest } from 'embroider-app/tests/helpers';
 
 module('Acceptance | Faker', function (hooks) {
   setupTest(hooks);

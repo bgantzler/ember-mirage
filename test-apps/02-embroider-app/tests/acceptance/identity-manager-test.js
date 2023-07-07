@@ -1,7 +1,6 @@
 import { module, test } from 'qunit';
-import { setupApplicationTest } from 'ember-qunit';
 
-import { setupMirage } from 'ember-cli-mirage/test-support';
+import { setupMirage, setupApplicationTest } from 'embroider-app/tests/helpers';
 
 module('Acceptance | Identity manager', function (hooks) {
   setupApplicationTest(hooks);

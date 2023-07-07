@@ -1,18 +1,23 @@
-import { click,currentRouteName, fillIn, visit } from '@ember/test-helpers';
+import { click, currentRouteName, fillIn, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
-import { setupApplicationTest } from 'ember-qunit';
 
-import { setupMirage } from 'ember-cli-mirage/test-support';
+import { mirageConfig } from 'embroider-app/mirage/config';
+import {
+  setupMirage,
+  startMirage,
+  setupApplicationTest,
+} from 'embroider-app/tests/helpers';
 
 module('Acceptance | Crud demo', function (hooks) {
   setupApplicationTest(hooks);
-  setupMirage(hooks);
+  setupMirage(hooks, { makeServer: mirageConfig });
 
   test('I can view the users', async function (assert) {
     this.server.createList('user', 3);
 
     await visit('/crud-demo');
 
+    assert.dom('[data-test-id="error"]').doesNotExist();
     assert.dom('[data-test-id="user"]').exists({ count: 3 });
   });
 
