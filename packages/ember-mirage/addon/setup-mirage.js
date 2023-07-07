@@ -11,7 +11,7 @@ import startMirage from './start-mirage';
  NOTE: the `hooks = self` is for mocha support
  @hide
  */
-export default function setupMirage(hooks = self, options) {
+export default function setupMirage(hooks = self, { makeServer, ...options }) {
   hooks.beforeEach(function () {
     if (!this.owner) {
       throw new Error(
@@ -21,7 +21,7 @@ export default function setupMirage(hooks = self, options) {
       );
     }
 
-    this.server = startMirage(options.makeServer, { owner: this.owner, ...options });
+    this.server = startMirage(makeServer, { owner: this.owner, ...options });
   });
 
   hooks.afterEach(function () {

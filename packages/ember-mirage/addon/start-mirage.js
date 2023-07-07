@@ -2,7 +2,7 @@ import { pluralize, singularize } from 'ember-inflector';
 
 import assert from './assert';
 
-export default function startMirage(makeServer, { owner, env } = {}) {
+export default function startMirage(makeServer, { owner, env, ...otherOptions } = {}) {
   assert('There is no makeServer function passed to startMirage', makeServer);
 
   assert(
@@ -21,6 +21,7 @@ export default function startMirage(makeServer, { owner, env } = {}) {
     env,
     environment,
     inflector: { singularize, pluralize },
+    ...otherOptions,
   };
 
   let server = makeServer(options);
