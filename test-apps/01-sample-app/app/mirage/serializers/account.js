@@ -9,5 +9,6 @@ export default ApplicationSerializer.extend({
     accountExternalId: { key: 'accountExternalAccountId' },
     products: { deserialize: 'records', serialize: false },
   },
-  // eslint-enable
 });
+
+// eslint-enable
