@@ -1,7 +1,6 @@
 import { click, currentRouteName, fillIn, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 
-import { mirageConfig } from 'embroider-app/mirage/config';
 import {
   setupMirage,
   startMirage,
@@ -10,7 +9,7 @@ import {
 
 module('Acceptance | Crud demo', function (hooks) {
   setupApplicationTest(hooks);
-  setupMirage(hooks, { makeServer: mirageConfig });
+  setupMirage(hooks);
 
   test('I can view the users', async function (assert) {
     this.server.createList('user', 3);
