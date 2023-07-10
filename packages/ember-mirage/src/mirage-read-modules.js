@@ -23,7 +23,9 @@ export default function (prefix) {
     'serializers',
     'identity-managers',
   ];
-  let mirageModuleRegExp = new RegExp(`^${prefix}/mirage/(${modules.join('|')})`);
+  let mirageModuleRegExp = new RegExp(
+    `^${prefix}/mirage/(${modules.join('|')})`
+  );
   let modulesMap = modules.reduce((memo, name) => {
     memo[camelize(name)] = {};
 
@@ -46,7 +48,10 @@ export default function (prefix) {
       let moduleKey = moduleParts.slice([moduleTypeIndex + 1]).join('/');
 
       if (moduleType === 'scenario') {
-        assert('Only scenario/default.js is supported at this time.', moduleKey !== 'default');
+        assert(
+          'Only scenario/default.js is supported at this time.',
+          moduleKey !== 'default'
+        );
       }
 
       /*
