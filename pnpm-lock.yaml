@@ -54,6 +54,9 @@ importers:
       '@babel/runtime':
         specifier: ^7.17.0
         version: 7.22.5
+      '@ember/test-helpers':
+        specifier: ^2.8.1
+        version: 2.8.1(@babel/core@7.22.5)(ember-source@4.9.1)
       '@embroider/addon-dev':
         specifier: ^3.0.0
         version: 3.0.0(rollup@3.21.8)
