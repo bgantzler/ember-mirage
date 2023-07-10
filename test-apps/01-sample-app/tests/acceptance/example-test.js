@@ -1,7 +1,7 @@
 import { currentURL,visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 
-import mirageConfig from 'ember-mirage-sample/mirage/config';
+import mirageConfig from 'ember-mirage-sample/mirage/servers/default';
 import { setupApplicationTest } from 'ember-mirage-sample/tests/helpers';
 
 import { setupMirage } from 'ember-mirage-sample/tests/test-support/mirage';

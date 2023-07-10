@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-get */
 
 export default function () {
 
@@ -18,3 +19,5 @@ export default function () {
 
   this.get('/images/:id');
 }
+
+// eslint-enable
