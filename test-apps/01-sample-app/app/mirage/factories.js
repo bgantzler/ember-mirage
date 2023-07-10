@@ -1,5 +1,5 @@
-import lineItem from './factories/line-item';
+import account from './factories/account';
 
 export default {
-  lineItem,
+  account,
 };

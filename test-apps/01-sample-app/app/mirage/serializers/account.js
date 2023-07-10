@@ -7,9 +7,7 @@ export default ApplicationSerializer.extend({
     dispenseGraceMinutes: { key: 'consumeGraceMinutes' },
     accountType: { deserialize: 'records', serialize: 'records' },
     accountExternalId: { key: 'accountExternalAccountId' },
-    contacts: { deserialize: 'records', serialize: 'records' },
     products: { deserialize: 'records', serialize: false },
-    pars: { deserialize: 'records', serialize: false },
   },
   // eslint-enable
 });
