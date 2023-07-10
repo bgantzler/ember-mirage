@@ -17,8 +17,6 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "lint:prettier": "prettier . --check",
-    "lint:prettier:fix": "prettier . --write",
     "start": "concurrently 'ember serve' 'pnpm _syncPnpm --watch' --names 'tests serve,tests sync deps'",
     "test:ember": "pnpm _syncPnpm; ember test",
     "_syncPnpm": "pnpm sync-dependencies-meta-injected"
