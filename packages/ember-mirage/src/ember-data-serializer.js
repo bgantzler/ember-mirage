@@ -154,7 +154,10 @@ let EmberDataSerializer = RestSerializer.extend({
 
         if (
           associatedResource &&
-          get(newDidSerialize, `${associatedResource.modelName}.${associatedResource.id}`)
+          get(
+            newDidSerialize,
+            `${associatedResource.modelName}.${associatedResource.id}`
+          )
         ) {
           // force it to IDS if we already have serialized it to prevent recursion
           // TODO: However is the end system wants records, we need to send records, so this really should be do records, dont resurse
@@ -175,12 +178,15 @@ let EmberDataSerializer = RestSerializer.extend({
 
           attrs[formattedKey] = associatedResourceHash;
         } else {
-          let formattedKey = this._keyForProperty(key) || this.keyForRelationshipIds(key);
+          let formattedKey =
+            this._keyForProperty(key) || this.keyForRelationshipIds(key);
 
           if (this.isCollection(associatedResource)) {
-            attrs[formattedKey] = model[`${this._container.inflector.singularize(key)}Ids`];
+            attrs[formattedKey] =
+              model[`${this._container.inflector.singularize(key)}Ids`];
           } else {
-            attrs[formattedKey] = model[`${this._container.inflector.singularize(key)}Id`];
+            attrs[formattedKey] =
+              model[`${this._container.inflector.singularize(key)}Id`];
           }
         }
       }
@@ -201,7 +207,8 @@ let EmberDataSerializer = RestSerializer.extend({
     }
 
     return (
-      this._keyForProperty(attr) || RestSerializer.prototype.keyForAttribute.apply(this, arguments)
+      this._keyForProperty(attr) ||
+      RestSerializer.prototype.keyForAttribute.apply(this, arguments)
     );
   },
 
