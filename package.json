@@ -8,7 +8,8 @@
     "_start:docs": "pnpm --filter docs-app start",
     "_start:tests": "pnpm --filter test-app start",
     "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
-    "test": "turbo run test --output-logs errors-only",
+    "test": "pnpm test:ember",
+    "test:ember": "turbo run test:ember --output-logs new-only",
     "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
     "lint": "turbo run _:lint --output-logs errors-only"
   },
