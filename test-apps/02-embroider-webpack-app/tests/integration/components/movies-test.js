@@ -2,7 +2,7 @@ import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 
-import { setupRenderingTest } from 'ember-mirage-sample/tests/helpers';
+import { setupRenderingTest } from 'test-app/tests/helpers';
 
 module('Integration | Component | movies', function (hooks) {
   setupRenderingTest(hooks);

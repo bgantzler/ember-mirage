@@ -1,10 +1,10 @@
-import { currentURL,visit } from '@ember/test-helpers';
+import { currentURL, visit } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 
-import mirageConfig from 'ember-mirage-sample/mirage/servers/default';
-import { setupApplicationTest } from 'ember-mirage-sample/tests/helpers';
+import mirageConfig from 'test-app/mirage/servers/default';
+import { setupApplicationTest } from 'test-app/tests/helpers';
 
-import { setupMirage } from 'ember-mirage-sample/tests/test-support/mirage';
+import { setupMirage } from 'test-app/tests/test-support/mirage';
 
 module('Acceptance | example test', function (hooks) {
   setupApplicationTest(hooks);

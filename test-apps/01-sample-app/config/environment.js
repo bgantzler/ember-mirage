@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   const ENV = {
-    modulePrefix: 'ember-mirage-sample',
+    modulePrefix: 'test-app',
     environment,
     rootURL: '/',
     locationType: 'history',

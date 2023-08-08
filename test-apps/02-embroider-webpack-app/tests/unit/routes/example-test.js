@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 
-import { setupTest } from 'ember-mirage-sample/tests/helpers';
+import { setupTest } from 'test-app/tests/helpers';
 
 module('Unit | Route | example', function (hooks) {
   setupTest(hooks);

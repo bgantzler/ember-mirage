@@ -1,7 +1,7 @@
 import Application from '@ember/application';
 
 import loadInitializers from 'ember-load-initializers';
-import config from 'ember-mirage-sample/config/environment';
+import config from 'test-app/config/environment';
 import Resolver from 'ember-resolver';
 
 export default class App extends Application {
