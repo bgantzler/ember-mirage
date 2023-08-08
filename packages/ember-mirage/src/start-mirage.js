@@ -4,19 +4,19 @@ import assert from './assert';
 
 export default function startMirage(
   makeServer,
-  { owner, env, ...otherOptions } = {}
+  { owner, env, ...otherOptions } = {},
 ) {
   assert('There is no makeServer function passed to startMirage', makeServer);
 
   assert(
     'Mirage config default exported function must at least one parameter',
-    makeServer.length > 0
+    makeServer.length > 0,
   );
 
   if (!env) {
     assert(
       'You must pass `owner` to startMirage() to lookup environment',
-      owner
+      owner,
     );
     env = owner.resolveRegistration('config:environment');
   }
