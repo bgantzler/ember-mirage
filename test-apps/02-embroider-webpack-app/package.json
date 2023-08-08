@@ -1,5 +1,5 @@
 {
-  "name": "ember-mirage-sample-broccoli-app",
+  "name": "ember-mirage-sample-embroider-app",
   "version": "0.0.0",
   "private": true,
   "description": "Small description for ember-mirage-sample goes here",
@@ -35,6 +35,9 @@
     "@babel/eslint-parser": "^7.22.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
+    "@embroider/compat": "^3.2.1",
+    "@embroider/core": "^3.2.1",
+    "@embroider/webpack": "^3.1.5",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
     "@nullvoxpopuli/eslint-configs": "^3.1.4",
