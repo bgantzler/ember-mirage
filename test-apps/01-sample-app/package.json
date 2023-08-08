@@ -32,12 +32,12 @@
     "miragejs": "^0.1.47"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.10",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@nullvoxpopuli/eslint-configs": "^3.1.4",
+    "@nullvoxpopuli/eslint-configs": "^3.2.0",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^7.6.0",
     "ember-auto-import": "^2.5.0",
@@ -58,18 +58,18 @@
     "ember-source": "~4.9.1",
     "ember-template-lint": "^5.2.0",
     "ember-welcome-page": "^6.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-ember": "^11.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-ember": "^11.10.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-qunit": "^7.3.4",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-qunit": "^8.0.0",
     "loader.js": "^4.7.0",
-    "pnpm-sync-dependencies-meta-injected": "^0.0.8",
-    "prettier": "^2.8.1",
+    "pnpm-sync-dependencies-meta-injected": "^0.0.9",
+    "prettier": "^3.0.1",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
-    "webpack": "^5.75.0"
+    "webpack": "^5.88.2"
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"

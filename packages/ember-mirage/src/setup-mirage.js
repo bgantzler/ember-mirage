@@ -17,7 +17,7 @@ export default function setupMirage(hooks = self, { makeServer, ...options }) {
       throw new Error(
         'You must call one of the ember-qunit setupTest(),' +
           ' setupRenderingTest() or setupApplicationTest() methods before' +
-          ' calling setupMirage()'
+          ' calling setupMirage()',
       );
     }
 
