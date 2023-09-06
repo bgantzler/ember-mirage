@@ -72,6 +72,7 @@
   },
   "exports": {
     ".": "./dist/index.js",
+    "./test-support": "./dist/test-support/index.js",
     "./*": "./dist/*.js",
     "./addon-main.js": "./addon-main.cjs"
   },

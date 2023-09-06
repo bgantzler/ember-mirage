@@ -19,7 +19,7 @@ module('Acceptance | example test', function (hooks) {
   });
 
   module('Test with imported config', function (hooks) {
-    setupMirage(hooks, { makeserver: mirageConfig });
+    setupMirage(hooks, { makeServer: mirageConfig });
     test('visiting /example', async function (assert) {
       await visit('/example');
 
