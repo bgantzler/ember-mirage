@@ -22,7 +22,6 @@ export default {
     addon.publicEntrypoints([
       'index.js',
       'ember-data-serializer.js',
-      'mirage-read-modules.js',
     ]),
 
     // These are the modules that should get reexported into the traditional
