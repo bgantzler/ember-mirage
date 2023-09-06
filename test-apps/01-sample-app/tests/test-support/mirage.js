@@ -1,4 +1,4 @@
-import { setupMirage as _setupMirage } from 'ember-mirage';
+import { setupMirage as _setupMirage } from 'ember-mirage/test-support';
 import mirageConfig from 'test-app/mirage/servers/default';
 
 export function setupMirage(hooks, options) {

@@ -1,6 +1,6 @@
 import { settled } from '@ember/test-helpers';
 
-import startMirage from './start-mirage';
+import startMirage from '../start-mirage';
 
 /**
  Used to set up mirage for a test. Must be called after one of the
