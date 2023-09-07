@@ -1,7 +1,7 @@
-ember-mirage-new
+ember-mirage
 ==============================================================================
+Helper utilities to start mirage during testing or development
 
-[Short description of the addon.]
 
 
 Compatibility
@@ -16,15 +16,15 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-mirage-new
+ember install ember-mirage
 ```
 
 
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
-
+See [MirageJS](https://miragejs.com/tutorial/part-1/) for creating and defining the server. These docs say to create 
+the server in `src/server.js` since the tutorial is using react. For ember we suggest `app/mirage/server.js`
 
 Contributing
 ------------------------------------------------------------------------------
