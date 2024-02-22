@@ -7,4 +7,4 @@ if (dependencySatisfies('ember-qunit', '*')) {
   });
 }
 
-export { setupMirage } from './setup-mirage';
+export { setupMirage } from './test-support/setup-mirage';
