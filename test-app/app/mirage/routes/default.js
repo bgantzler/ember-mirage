@@ -1,7 +1,6 @@
 /* eslint-disable ember/no-get */
 
 export default function () {
-
   this.passthrough('/write-coverage');
 
   /*
