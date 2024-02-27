@@ -1,43 +1,26 @@
 {
-  "name": "ember-mirage-monorepo-root",
   "private": true,
+  "repository": "https://github.com/bgantzler/ember-mirage",
+  "license": "MIT",
   "scripts": {
-    "release": "changeset publish",
-    "build": "turbo run build --output-logs errors-only",
-    "start": "pnpm build; concurrently 'npm:_start:*' --prefix ' ' --restart-after 5000 --restart-tries -1",
-    "_start:docs": "pnpm --filter docs-app start",
-    "_start:tests": "pnpm --filter test-app start",
-    "_start:package": "pnpm --filter 'ember-primitives' start --no-watch.clearScreen",
-    "test": "pnpm test:ember",
-    "test:ember": "turbo run test:ember --output-logs new-only",
-    "lint:fix": "turbo run _:lint:fix --output-logs errors-only",
-    "lint": "turbo run _:lint --output-logs errors-only"
+    "build": "pnpm --filter ember-mirage build",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter ember-mirage start --no-watch.clearScreen",
+    "start:test-app": "pnpm --filter test-app start",
+    "test": "pnpm --filter '*' test",
+    "test:ember": "pnpm --filter '*' test:ember"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.2",
     "concurrently": "^8.2.0",
-    "prettier": "^3.0.1",
-    "prettier-plugin-ember-template-tag": "^1.0.0",
-    "turbo": "^1.10.12"
-  },
-  "engines": {
-    "node": ">= 18.*",
-    "yarn": "use pnpm",
-    "npm": "use pnpm"
-  },
-  "volta": {
-    "node": "18.16.0",
-    "pnpm": "8.6.2"
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^1.1.0"
   },
   "pnpm": {
-    "peerDependencyRules": {
-      "allowAny": [
-        "typescript",
-        "ember-source"
-      ],
-      "ignoreMissing": [
-        "webpack"
-      ]
+    "overrides": {
+      "@types/eslint": "^7.0.0"
     }
   }
 }
