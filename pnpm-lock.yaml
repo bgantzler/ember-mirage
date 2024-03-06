@@ -226,10 +226,10 @@ importers:
         specifier: ^0.1.48
         version: 0.1.48
       prettier:
-        specifier: ^3.2.4
+        specifier: ^3.2.5
         version: 3.2.5
       qunit:
-        specifier: ^2.20.0
+        specifier: ^2.20.1
         version: 2.20.1
       qunit-dom:
         specifier: ^2.0.0
