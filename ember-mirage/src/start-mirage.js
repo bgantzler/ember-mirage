@@ -1,4 +1,4 @@
-import { pluralize, singularize } from 'ember-inflector';
+import { pluralize, singularize } from 'active-inflector';
 
 import assert from './assert';
 
