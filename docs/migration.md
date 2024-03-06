@@ -250,7 +250,7 @@ Import startMirage, your server config, then call start mirage. Note that this w
 by checking your current environment or any other condition you wish, to start with a different
 server for each condition
 ```js
-import startMirage  from 'ember-cli-mirage/start-mirage';
+import startMirage  from 'ember-mirage/start-mirage';
 import mirageConfig from 'myApp/mirage/config';
 
 export default ApplicationRoute extends Route {
