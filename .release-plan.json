@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "ember-mirage": {
+      "impact": "minor",
+      "oldVersion": "0.2.0",
+      "newVersion": "0.3.0",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./ember-mirage/package.json"
+    }
+  },
+  "description": "## Release (2024-03-06)\n\nember-mirage 0.3.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-mirage`\n  * [#30](https://github.com/bgantzler/ember-mirage/pull/30) swap from ember-inflector to active-inflector ([@mansona](https://github.com/mansona))\n* Other\n  * [#11](https://github.com/bgantzler/ember-mirage/pull/11) Pass additional options into the makeServer function ([@cah-brian-gantzler](https://github.com/cah-brian-gantzler))\n\n#### :memo: Documentation\n* [#27](https://github.com/bgantzler/ember-mirage/pull/27) Update readme and migration guide ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `ember-mirage`\n  * [#32](https://github.com/bgantzler/ember-mirage/pull/32) reset addon version to what is deployed on npm ([@mansona](https://github.com/mansona))\n* `test-app`\n  * [#31](https://github.com/bgantzler/ember-mirage/pull/31) update addon blueprint to v2.14 with ember-cli-update ([@mansona](https://github.com/mansona))\n  * [#23](https://github.com/bgantzler/ember-mirage/pull/23) Move files that import test dependencies out of modules that may be imported by an app in development ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#22](https://github.com/bgantzler/ember-mirage/pull/22) make embroider fully strict ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#20](https://github.com/bgantzler/ember-mirage/pull/20) Update ember dependencies ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#19](https://github.com/bgantzler/ember-mirage/pull/19) Upgrade lint deps ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#18](https://github.com/bgantzler/ember-mirage/pull/18) Add embroider app ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#17](https://github.com/bgantzler/ember-mirage/pull/17) Renamed some of the files and changed imports to be clearer on intent ([@cah-brian-gantzler](https://github.com/cah-brian-gantzler))\n  * [#15](https://github.com/bgantzler/ember-mirage/pull/15) Removed all the extra models/serializers from the sample app ([@cah-brian-gantzler](https://github.com/cah-brian-gantzler))\n  * [#14](https://github.com/bgantzler/ember-mirage/pull/14) v2 Addon conversion ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#9](https://github.com/bgantzler/ember-mirage/pull/9) Add first sample-app ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#6](https://github.com/bgantzler/ember-mirage/pull/6) To pnpm monorepo ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* Other\n  * [#28](https://github.com/bgantzler/ember-mirage/pull/28) start using release-plan for deployment ([@mansona](https://github.com/mansona))\n  * [#16](https://github.com/bgantzler/ember-mirage/pull/16) use test:ember script for local test command ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#12](https://github.com/bgantzler/ember-mirage/pull/12) Ignore .eslintcache ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#8](https://github.com/bgantzler/ember-mirage/pull/8) Add index.js to the files list ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#7](https://github.com/bgantzler/ember-mirage/pull/7) Add GH Workflows ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n* `ember-mirage`, `test-app`\n  * [#26](https://github.com/bgantzler/ember-mirage/pull/26) Reset blueprint to latest v2 ([@mansona](https://github.com/mansona))\n\n#### Committers: 3\n- Brian Gantzler ([@cah-brian-gantzler](https://github.com/cah-brian-gantzler))\n- Chris Manson ([@mansona](https://github.com/mansona))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+}
