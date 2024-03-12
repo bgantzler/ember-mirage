@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Test app for ember-mirage addon",
-  "repository": "",
+  "repository": "https://github.com/bgantzler/ember-mirage",
   "license": "MIT",
   "author": "",
   "directories": {
