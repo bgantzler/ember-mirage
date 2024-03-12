@@ -252,7 +252,6 @@ Steps 1 - 5 should be completed in ember-cli-mirage prior to converting to ember
        
        startMirage(mirageConfig, {
          owner: getOwner(this),
-         ...mirageConfig,
        });
      }
    }
