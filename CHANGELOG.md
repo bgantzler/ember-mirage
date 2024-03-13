@@ -1,5 +1,28 @@
 # Changelog
 
+## Release (2024-03-13)
+
+ember-mirage 0.3.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`, `test-app`
+  * [#38](https://github.com/bgantzler/ember-mirage/pull/38) put the repository reference in the right package ([@mansona](https://github.com/mansona))
+* `test-app`
+  * [#36](https://github.com/bgantzler/ember-mirage/pull/36) fix github backlink from npm ([@mansona](https://github.com/mansona))
+
+#### :memo: Documentation
+* [#37](https://github.com/bgantzler/ember-mirage/pull/37) docs: tiny correction ([@aklkv](https://github.com/aklkv))
+* [#35](https://github.com/bgantzler/ember-mirage/pull/35) docs: formatting & init script ([@aklkv](https://github.com/aklkv))
+* [#33](https://github.com/bgantzler/ember-mirage/pull/33) docs: correct import path for startMirage ([@aklkv](https://github.com/aklkv))
+
+#### :house: Internal
+* [#10](https://github.com/bgantzler/ember-mirage/pull/10) Configure renovate ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 3
+- Alexey Kulakov ([@aklkv](https://github.com/aklkv))
+- Chris Manson ([@mansona](https://github.com/mansona))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-03-06)
 
 ember-mirage 0.3.0 (minor)
