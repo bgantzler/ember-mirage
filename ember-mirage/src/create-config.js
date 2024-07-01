@@ -32,7 +32,7 @@ export default async function createConfig(
       ...importEmberDataSerializers(serializers, emberDataConfig),
       ...serializers,
     },
-    identityManagers: importEntities(mirageImportMap.identityManagers),
+    identityManagers: await importEntities(mirageImportMap.identityManagers),
   };
 }
 
