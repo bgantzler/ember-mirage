@@ -9,13 +9,14 @@ Ember mirage does not support the following.
 * auto load of mirage files (models/serializers/factories/etc)
 * auto discover of the server config
 * auto start of mirage in development
+* auto register inflector
 
 This guides goes through what you need to do to migrate from ember-cli-mirage and how to accomplish the things needed
 to use mirageJS
 
 ECM also contains code to exclude the mirage files during certain builds, for example production. This addon does not include that feature and instead relies on embroider. If you are not on embroider yet, you may desire to wait until an non-embroider solution is completed.
 
-Steps 1 - 5 should be completed in ember-cli-mirage prior to converting to ember-mirage, Consider this a form of removing deprecations so that you can move to the next version (this addon).
+Steps 1 - 6 should be completed in ember-cli-mirage prior to converting to ember-mirage, Consider this a form of removing deprecations so that you can move to the next version (this addon).
 
 1) Remove the use of autoDiscoverModels.
 
@@ -187,7 +188,28 @@ Steps 1 - 5 should be completed in ember-cli-mirage prior to converting to ember
    Repeat this process for the other types (factories/serializers/etc)
    This could be added back once an official way to discover these files exists. There is an [RFC](https://github.com/emberjs/rfcs/blob/import-glob/text/0939-import-glob.md) in the works.
 
-4) Remove auto discover of the server config in ECM the server config is looked up, as it must be the name config in the mirage directory. ECM however does allow you to specify the config you wish to use in each test by doing the following. Note this also allows you to specify a different mirage server for a test is needed.
+4) Register inflectors.
+
+   If you have registered custom inflector rules for pluralization you will need to update your mirage config to tell it to use these rules internally. Mirage uses it's own [custom inflector](https://miragejs.com/docs/advanced/customizing-inflections/) which you can override with Ember's.
+
+   ```js
+   // mirage/config.js
+   import { pluralize, singularize } from 'ember-inflector';
+
+   export default function (config) {
+     let finalConfig = {
+       ...config,
+      inflector: {
+        pluralize,
+        singularize,
+      },
+     };
+
+     return createServer(finalConfig);
+   }
+   ```
+
+5) Remove auto discover of the server config in ECM the server config is looked up, as it must be the name config in the mirage directory. ECM however does allow you to specify the config you wish to use in each test by doing the following. Note this also allows you to specify a different mirage server for a test is needed.
 
    ```js
    import { currentURL,visit } from '@ember/test-helpers';
@@ -236,7 +258,7 @@ Steps 1 - 5 should be completed in ember-cli-mirage prior to converting to ember
 
    You are now specifying the server setup in each test and ECM is no longer using the default config.
 
-5) Remove auto start of the of the server in development or production
+6) Remove auto start of the of the server in development or production
    If you are using the mirage server for development or production, instead of having the addon start the server for you, in your code start the server your self. A possible location is in the application route.
 
    Import startMirage, your server config, then call start mirage. Note that this would allow you, by checking your current environment or any other condition you wish, to start with a different server for each condition
