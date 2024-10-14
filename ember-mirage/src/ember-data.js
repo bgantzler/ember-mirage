@@ -1,10 +1,33 @@
 import { Model, belongsTo, hasMany } from 'miragejs';
 import EmberDataSerializer from './ember-data-serializer';
+import { entityName } from './create-config';
 
 const MirageModelCache = {};
 const MirageSerializerCache = {};
 
-export function createMirageModel(store, modelName) {
+export function importEmberDataModels(store, importMap = {}) {
+  return Object.keys(importMap).reduce((acc, path) => {
+    const configName = entityName(path);
+    acc[configName] = createMirageModel(store, configName);
+    return acc;
+  }, {});
+}
+
+// TODO: Replace with original `applyEmberDataSerializers` function
+function importEmberDataSerializers(mirageSerializers, emberDataConfig = {}) {
+  const { store, serializers = {} } = emberDataConfig;
+  return Object.keys(serializers).reduce((acc, path) => {
+    const configName = entityName(path);
+    acc[configName] = createMirageSerializer(
+      store,
+      mirageSerializers,
+      configName,
+    );
+    return acc;
+  }, {});
+}
+
+function createMirageModel(store, modelName) {
   if (MirageModelCache[modelName]) {
     return MirageModelCache[modelName];
   }
