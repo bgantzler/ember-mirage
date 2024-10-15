@@ -14,7 +14,10 @@ export function importEmberDataModels(store, importMap = {}) {
 }
 
 // TODO: Replace with original `applyEmberDataSerializers` function
-function importEmberDataSerializers(mirageSerializers, emberDataConfig = {}) {
+export function importEmberDataSerializers(
+  mirageSerializers,
+  emberDataConfig = {},
+) {
   const { store, serializers = {} } = emberDataConfig;
   return Object.keys(serializers).reduce((acc, path) => {
     const configName = entityName(path);
