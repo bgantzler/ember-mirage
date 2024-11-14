@@ -23,6 +23,9 @@
   "pnpm": {
     "overrides": {
       "@types/eslint": "^7.0.0"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": ["webpack"]
     }
   }
 }
