@@ -186,7 +186,7 @@ Steps 1 - 6 should be completed in ember-cli-mirage prior to converting to ember
    ```
 
    Repeat this process for the other types (factories/serializers/etc)
-   This could be added back once an official way to discover these files exists. There is an [RFC](https://github.com/emberjs/rfcs/blob/import-glob/text/0939-import-glob.md) in the works.
+   Work to build an official way to discover these files is in the works. An RFC has landed ([https://github.com/emberjs/rfcs/pull/939](https://rfcs.emberjs.com/id/0939-import-glob) and alpha support for classic/Embroider builds is available as outlined at https://github.com/NullVoxPopuli/ember-classic-import-meta-glob. 
 
 4) Register inflectors.
 
@@ -238,7 +238,7 @@ Steps 1 - 6 should be completed in ember-cli-mirage prior to converting to ember
 
    ```js
    // tests/test-support/mirage
-   import { setupMirage as _setupMirage } from 'ember-mirage/test-support';
+   import { setupMirage as _setupMirage } from 'ember-cli-mirage/test-support';
 
    import mirageConfig from 'myApp/mirage/config';
 
