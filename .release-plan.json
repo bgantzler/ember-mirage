@@ -2,20 +2,16 @@
   "solution": {
     "ember-mirage": {
       "impact": "patch",
-      "oldVersion": "0.3.1",
-      "newVersion": "0.3.2",
+      "oldVersion": "0.3.2",
+      "newVersion": "0.3.3",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-mirage/package.json"
     }
   },
-  "description": "## Release (2024-11-14)\n\nember-mirage 0.3.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#44](https://github.com/bgantzler/ember-mirage/pull/44) Widen peer range for miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :memo: Documentation\n* [#43](https://github.com/bgantzler/ember-mirage/pull/43) Update migration docs with path cleanup, latest on progress ([@acorncom](https://github.com/acorncom))\n\n#### :house: Internal\n* `ember-mirage`, `test-app`\n  * [#45](https://github.com/bgantzler/ember-mirage/pull/45) Update base workflows and lockfile for pnpm 9, set `packageManager` ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- David Baker ([@acorncom](https://github.com/acorncom))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2024-11-14)\n\nember-mirage 0.3.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#47](https://github.com/bgantzler/ember-mirage/pull/47) Explicitly define a wide peer range to include alpha releases of miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }

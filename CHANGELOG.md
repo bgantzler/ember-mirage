@@ -2,6 +2,17 @@
 
 ## Release (2024-11-14)
 
+ember-mirage 0.3.3 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`
+  * [#47](https://github.com/bgantzler/ember-mirage/pull/47) Explicitly define a wide peer range to include alpha releases of miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 1
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
+## Release (2024-11-14)
+
 ember-mirage 0.3.2 (patch)
 
 #### :bug: Bug Fix
