@@ -38,7 +38,7 @@
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
-    "miragejs": ">= 0.1.47"
+    "miragejs": ">= 0.1.47 || >= 0.2.0-alpha.3"
   },
   "devDependencies": {
     "@babel/core": "^7.23.6",
