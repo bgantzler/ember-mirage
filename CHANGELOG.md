@@ -1,5 +1,24 @@
 # Changelog
 
+## Release (2024-11-14)
+
+ember-mirage 0.3.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`
+  * [#44](https://github.com/bgantzler/ember-mirage/pull/44) Widen peer range for miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :memo: Documentation
+* [#43](https://github.com/bgantzler/ember-mirage/pull/43) Update migration docs with path cleanup, latest on progress ([@acorncom](https://github.com/acorncom))
+
+#### :house: Internal
+* `ember-mirage`, `test-app`
+  * [#45](https://github.com/bgantzler/ember-mirage/pull/45) Update base workflows and lockfile for pnpm 9, set `packageManager` ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### Committers: 2
+- David Baker ([@acorncom](https://github.com/acorncom))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## Release (2024-07-17)
 
 ember-mirage 0.3.1 (patch)

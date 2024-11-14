@@ -2,16 +2,20 @@
   "solution": {
     "ember-mirage": {
       "impact": "patch",
-      "oldVersion": "0.3.0",
-      "newVersion": "0.3.1",
+      "oldVersion": "0.3.1",
+      "newVersion": "0.3.2",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./ember-mirage/package.json"
     }
   },
-  "description": "## Release (2024-07-17)\n\nember-mirage 0.3.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`, `test-app`\n  * [#38](https://github.com/bgantzler/ember-mirage/pull/38) put the repository reference in the right package ([@mansona](https://github.com/mansona))\n* `test-app`\n  * [#36](https://github.com/bgantzler/ember-mirage/pull/36) fix github backlink from npm ([@mansona](https://github.com/mansona))\n\n#### :memo: Documentation\n* [#40](https://github.com/bgantzler/ember-mirage/pull/40) Added Information for Custom Inflector ([@jrjohnson](https://github.com/jrjohnson))\n* [#37](https://github.com/bgantzler/ember-mirage/pull/37) docs: tiny correction ([@aklkv](https://github.com/aklkv))\n* [#35](https://github.com/bgantzler/ember-mirage/pull/35) docs: formatting & init script ([@aklkv](https://github.com/aklkv))\n* [#33](https://github.com/bgantzler/ember-mirage/pull/33) docs: correct import path for startMirage ([@aklkv](https://github.com/aklkv))\n\n#### :house: Internal\n* [#41](https://github.com/bgantzler/ember-mirage/pull/41) update release-plan ([@mansona](https://github.com/mansona))\n* [#10](https://github.com/bgantzler/ember-mirage/pull/10) Configure renovate ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 4\n- Alexey Kulakov ([@aklkv](https://github.com/aklkv))\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Jon Johnson ([@jrjohnson](https://github.com/jrjohnson))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2024-11-14)\n\nember-mirage 0.3.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#44](https://github.com/bgantzler/ember-mirage/pull/44) Widen peer range for miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :memo: Documentation\n* [#43](https://github.com/bgantzler/ember-mirage/pull/43) Update migration docs with path cleanup, latest on progress ([@acorncom](https://github.com/acorncom))\n\n#### :house: Internal\n* `ember-mirage`, `test-app`\n  * [#45](https://github.com/bgantzler/ember-mirage/pull/45) Update base workflows and lockfile for pnpm 9, set `packageManager` ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- David Baker ([@acorncom](https://github.com/acorncom))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
 }
