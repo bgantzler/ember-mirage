@@ -20,9 +20,15 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
-    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
-    "test:ember": "ember test"
+    "start": "pnpm _syncPnpm && concurrently 'pnpm _syncPnpm --watch' 'pnpm ember s' --names 'sync injected, ember s'",
+    "test": "pnpm test:ember",
+    "test:ember": "pnpm _syncPnpm && pnpm ember test",
+    "_syncPnpm": "pnpm sync-dependencies-meta-injected"
+  },
+  "dependenciesMeta": {
+    "ember-mirage": {
+      "injected": true
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
@@ -37,7 +43,7 @@
     "@glimmer/tracking": "^1.1.2",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^8.2.2",
-    "ember-auto-import": "^2.7.2",
+    "ember-auto-import": "^2.10.0",
     "ember-cli": "~5.6.0",
     "ember-cli-app-version": "^6.0.1",
     "ember-cli-babel": "^8.2.0",
@@ -70,6 +76,7 @@
     "prettier": "^3.2.5",
     "qunit": "^2.20.1",
     "qunit-dom": "^2.0.0",
+    "pnpm-sync-dependencies-meta-injected": "^0.0.14",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^4.1.0",
@@ -81,5 +88,7 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
   }
 }
