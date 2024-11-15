@@ -1,10 +1,11 @@
-import mirageConfig from 'test-app/mirage/servers/default';
+import mirageConfig from 'test-app/mirage/servers/manual';
 
 import { setupMirage as _setupMirage } from 'ember-mirage/test-support';
 
-export function setupMirage(hooks, options) {
-  options = options || {};
-  options.makeServer = options.makeServer || mirageConfig;
+import { createServer as _createServer } from 'miragejs';
 
-  return _setupMirage(hooks, options);
+export function setupMirage(hooks, { createServer, config } = {}) {
+  createServer ??= _createServer;
+  config ??= mirageConfig;
+  return _setupMirage(hooks, { createServer, config });
 }

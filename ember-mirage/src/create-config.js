@@ -13,7 +13,7 @@ export function entityName(path) {
   return camelize(filenameWithoutExt);
 }
 
-export default async function createConfig(mirageImportMap = {}) {
+export async function createConfig(mirageImportMap = {}) {
   return {
     factories: await importEntities(mirageImportMap.factories),
     fixtures: await importEntities(mirageImportMap.fixtures),
