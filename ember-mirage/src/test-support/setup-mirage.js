@@ -1,18 +1,24 @@
+import { assert } from '@ember/debug';
 import { settled } from '@ember/test-helpers';
+import { createServer as _createServer } from 'miragejs';
 
-import startMirage from '../start-mirage';
+export function setupMirage(hooks = self, { createServer, config }) {
+  assert(
+    `Unexpected arity for setupMirage. Expected 2 (hooks, { createServer, or config })`,
+    arguments.length <= 2 && arguments.length > 0,
+  );
+  assert(
+    `Second argument to setupMirage must be an object and not null`,
+    typeof arguments[1] === 'object' && arguments[1] !== null,
+  );
+  assert(
+    `Second argument to setupMirage must on or both of createServer and/or config. You passed ${Object.keys(arguments[1]).join(', ')}`,
+    'createServer' in arguments[1] || 'config' in arguments[1],
+  );
 
-/**
- Used to set up mirage for a test. Must be called after one of the
- `ember-qunit` `setup*Test()` methods. It starts the server and sets
- `this.server` to point to it, and shuts the server down when the test
- finishes.
+  createServer ??= _createServer;
 
- NOTE: the `hooks = self` is for mocha support
- @hide
- */
-export function setupMirage(hooks = self, { makeServer, ...options }) {
-  hooks.beforeEach(function () {
+  hooks.beforeEach(async function () {
     if (!this.owner) {
       throw new Error(
         'You must call one of the ember-qunit setupTest(),' +
@@ -21,7 +27,7 @@ export function setupMirage(hooks = self, { makeServer, ...options }) {
       );
     }
 
-    this.server = startMirage(makeServer, { owner: this.owner, ...options });
+    this.server = await createServer(config ?? {});
   });
 
   hooks.afterEach(function () {

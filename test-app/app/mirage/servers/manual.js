@@ -1,5 +1,3 @@
-import { createServer } from 'miragejs';
-
 import factories from '../factories';
 import mirageModels from '../models';
 import defaultRoutes from '../routes/default';
@@ -28,7 +26,7 @@ export default function (config) {
     },
   };
 
-  return createServer(finalConfig);
+  return finalConfig;
 }
 
 function defineRoutes() {
