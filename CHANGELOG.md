@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2024-11-18)
+
+ember-mirage 0.4.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-mirage`, `test-app`
+  * [#39](https://github.com/bgantzler/ember-mirage/pull/39) Support auto discovery for mirage and ember-data entities via import.meta.glob ([@enspandi](https://github.com/enspandi))
+
+#### :bug: Bug Fix
+* `ember-mirage`, `test-app`
+  * [#39](https://github.com/bgantzler/ember-mirage/pull/39) Support auto discovery for mirage and ember-data entities via import.meta.glob ([@enspandi](https://github.com/enspandi))
+
+#### Committers: 1
+- Andreas Minnich ([@enspandi](https://github.com/enspandi))
+
 ## Release (2024-11-14)
 
 ember-mirage 0.3.3 (patch)

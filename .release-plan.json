@@ -1,10 +1,14 @@
 {
   "solution": {
     "ember-mirage": {
-      "impact": "patch",
-      "oldVersion": "0.3.2",
-      "newVersion": "0.3.3",
+      "impact": "minor",
+      "oldVersion": "0.3.3",
+      "newVersion": "0.4.0",
       "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
@@ -13,5 +17,5 @@
       "pkgJSONPath": "./ember-mirage/package.json"
     }
   },
-  "description": "## Release (2024-11-14)\n\nember-mirage 0.3.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#47](https://github.com/bgantzler/ember-mirage/pull/47) Explicitly define a wide peer range to include alpha releases of miragejs ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 1\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+  "description": "## Release (2024-11-18)\n\nember-mirage 0.4.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-mirage`, `test-app`\n  * [#39](https://github.com/bgantzler/ember-mirage/pull/39) Support auto discovery for mirage and ember-data entities via import.meta.glob ([@enspandi](https://github.com/enspandi))\n\n#### :bug: Bug Fix\n* `ember-mirage`, `test-app`\n  * [#39](https://github.com/bgantzler/ember-mirage/pull/39) Support auto discovery for mirage and ember-data entities via import.meta.glob ([@enspandi](https://github.com/enspandi))\n\n#### Committers: 1\n- Andreas Minnich ([@enspandi](https://github.com/enspandi))\n"
 }
