@@ -1,1 +1,1 @@
-export { default as startMirage } from './start-mirage';
+export { createConfig, entityName } from './create-config.js';
