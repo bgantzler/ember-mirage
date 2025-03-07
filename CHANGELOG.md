@@ -2,6 +2,17 @@
 
 ## Release (2025-03-07)
 
+ember-mirage 0.4.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`
+  * [#54](https://github.com/bgantzler/ember-mirage/pull/54) Fix Mirage logging Qunit integration ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+## Release (2025-03-07)
+
 ember-mirage 0.4.1 (patch)
 
 #### :bug: Bug Fix
