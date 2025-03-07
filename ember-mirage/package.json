@@ -38,7 +38,13 @@
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
-    "miragejs": ">= 0.1.47 || >= 0.2.0-alpha.3"
+    "miragejs": ">= 0.1.47 || >= 0.2.0-alpha.3",
+    "ember-qunit": "*"
+  },
+  "peerDependenciesMeta": {
+    "ember-qunit": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.23.6",
