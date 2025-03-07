@@ -27,7 +27,7 @@ importers:
   ember-mirage:
     dependencies:
       '@ember/test-helpers':
-        specifier: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
+        specifier: ^2.0.0 || ^3.0.0 || ^4.0.0 || >=5.0.0
         version: 3.3.1(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))(webpack@5.96.1)
       '@embroider/addon-shim':
         specifier: ^1.8.7
