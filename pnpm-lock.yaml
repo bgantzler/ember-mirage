@@ -27,8 +27,8 @@ importers:
   ember-mirage:
     dependencies:
       '@ember/test-helpers':
-        specifier: ^2.0.0
-        version: 2.9.4(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5))
+        specifier: ^2.0.0 || ^3.0.0 || ^4.0.0 || >=5.0.0
+        version: 3.3.1(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))(webpack@5.96.1)
       '@embroider/addon-shim':
         specifier: ^1.8.7
         version: 1.9.0
@@ -3359,7 +3359,7 @@ packages:
   ember-mirage@file:ember-mirage:
     resolution: {directory: ember-mirage, type: directory}
     peerDependencies:
-      miragejs: ^0.1.47
+      miragejs: '>= 0.1.47 || >= 0.2.0-alpha.3'
 
   ember-modifier@4.2.0:
     resolution: {integrity: sha512-BJ48eTEGxD8J7+lofwVmee7xDgNDgpr5dd6+MSu4gk+I6xb35099RMNorXY5hjjwMJEyi/IRR6Yn3M7iJMz8Zw==}
@@ -8213,11 +8213,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ember/test-helpers@2.9.4(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5))':
+  '@ember/test-helpers@2.9.4(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))':
     dependencies:
       '@ember/test-waiters': 3.1.0
       '@embroider/macros': 1.16.9
-      '@embroider/util': 1.13.2(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5))
+      '@embroider/util': 1.13.2(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
@@ -8356,7 +8356,7 @@ snapshots:
     optionalDependencies:
       '@embroider/core': 3.4.19
 
-  '@embroider/util@1.13.2(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5))':
+  '@embroider/util@1.13.2(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))':
     dependencies:
       '@embroider/macros': 1.16.9
       broccoli-funnel: 3.0.8
@@ -11478,7 +11478,7 @@ snapshots:
 
   ember-mirage@file:ember-mirage(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))(miragejs@0.1.48):
     dependencies:
-      '@ember/test-helpers': 2.9.4(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5))
+      '@ember/test-helpers': 2.9.4(@babel/core@7.26.0)(ember-source@5.6.0(@babel/core@7.26.0)(@glimmer/component@1.1.2(@babel/core@7.26.0))(rsvp@4.8.5)(webpack@5.96.1))
       '@embroider/addon-shim': 1.9.0
       active-inflector: 0.1.0
       decorator-transforms: 1.2.1(@babel/core@7.26.0)
