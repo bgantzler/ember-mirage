@@ -28,6 +28,14 @@ export function setupMirage(hooks = self, { createServer, config }) {
     }
 
     this.server = await createServer(config ?? {});
+
+    // This only works after the server was created.
+    if (
+      typeof location !== 'undefined' &&
+      location.search.indexOf('mirageLogging') !== -1
+    ) {
+      this.server.logging = true;
+    }
   });
 
   hooks.afterEach(function () {
