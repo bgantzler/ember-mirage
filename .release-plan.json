@@ -2,8 +2,8 @@
   "solution": {
     "ember-mirage": {
       "impact": "patch",
-      "oldVersion": "0.4.0",
-      "newVersion": "0.4.1",
+      "oldVersion": "0.4.1",
+      "newVersion": "0.4.2",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./ember-mirage/package.json"
     }
   },
-  "description": "## Release (2025-03-07)\n\nember-mirage 0.4.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#56](https://github.com/bgantzler/ember-mirage/pull/56) Add optional peer dependency on ember-qunit ([@nickschot](https://github.com/nickschot))\n  * [#55](https://github.com/bgantzler/ember-mirage/pull/55) Widen @ember/test-helpers range to allow v3, v4 and v5 as well ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
+  "description": "## Release (2025-03-07)\n\nember-mirage 0.4.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#54](https://github.com/bgantzler/ember-mirage/pull/54) Fix Mirage logging Qunit integration ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
 }
