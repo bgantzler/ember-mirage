@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2025-03-07)
+
+ember-mirage 0.4.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`
+  * [#56](https://github.com/bgantzler/ember-mirage/pull/56) Add optional peer dependency on ember-qunit ([@nickschot](https://github.com/nickschot))
+  * [#55](https://github.com/bgantzler/ember-mirage/pull/55) Widen @ember/test-helpers range to allow v3, v4 and v5 as well ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
 ## Release (2024-11-18)
 
 ember-mirage 0.4.0 (minor)
