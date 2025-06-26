@@ -1,6 +1,9 @@
 import { assert } from '@ember/debug';
 import { settled } from '@ember/test-helpers';
 import { createServer as _createServer } from 'miragejs';
+import { dependencySatisfies } from '@embroider/macros';
+
+let qunitSetUp = false;
 
 export function setupMirage(hooks = self, { createServer, config }) {
   assert(
@@ -46,4 +49,13 @@ export function setupMirage(hooks = self, { createServer, config }) {
       }
     });
   });
+
+  // the qunitSetUp guard is to prevent this from pushing multiple copies of the same config option
+  if (dependencySatisfies('ember-qunit', '*') && !qunitSetUp) {
+    window.QUnit.config.urlConfig.push({
+      id: 'mirageLogging',
+      label: 'Mirage logging',
+    });
+    qunitSetUp = true;
+  }
 }
