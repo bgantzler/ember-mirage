@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-06-26)
+
+ember-mirage 0.4.3 (patch)
+
+#### :bug: Bug Fix
+* `ember-mirage`
+  * [#61](https://github.com/bgantzler/ember-mirage/pull/61) move qunit config out of module scope ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
 ## Release (2025-03-07)
 
 ember-mirage 0.4.2 (patch)
