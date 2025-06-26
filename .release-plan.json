@@ -2,8 +2,8 @@
   "solution": {
     "ember-mirage": {
       "impact": "patch",
-      "oldVersion": "0.4.1",
-      "newVersion": "0.4.2",
+      "oldVersion": "0.4.2",
+      "newVersion": "0.4.3",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +13,5 @@
       "pkgJSONPath": "./ember-mirage/package.json"
     }
   },
-  "description": "## Release (2025-03-07)\n\nember-mirage 0.4.2 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#54](https://github.com/bgantzler/ember-mirage/pull/54) Fix Mirage logging Qunit integration ([@nickschot](https://github.com/nickschot))\n\n#### Committers: 1\n- Nick Schot ([@nickschot](https://github.com/nickschot))\n"
+  "description": "## Release (2025-06-26)\n\nember-mirage 0.4.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#61](https://github.com/bgantzler/ember-mirage/pull/61) move qunit config out of module scope ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }
