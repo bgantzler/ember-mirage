@@ -294,3 +294,29 @@ Steps 1 - 6 should be completed in ember-cli-mirage prior to converting to ember
     staticAppPaths: ['mirage']
    });
    ```
+
+   If you are still using classic broccoli based ember-cli builds, you can use [broccoli-funnel](https://github.com/broccolijs/broccoli-funnel) to filter out the mirage files as well.
+
+   ```js
+   // ember-cli-build.js
+   const Funnel = require('broccoli-funnel');
+   const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+   const isMirageEnabled = ENV.isMirageEnabled || false;
+
+   const appDir = isMirageEnabled
+     ? 'app'
+     : new Funnel('app', {
+         exclude: ['mirage/**/*'],
+       });
+
+   module.exports = function (defaults) {
+     const app = new EmberApp(defaults, {
+       trees: {
+         app: appDir
+       }
+     });
+
+     return app.toTree();
+   };
+   ```
