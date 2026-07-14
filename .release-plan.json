@@ -1,17 +1,8 @@
 {
   "solution": {
     "ember-mirage": {
-      "impact": "patch",
-      "oldVersion": "0.4.2",
-      "newVersion": "0.4.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        }
-      ],
-      "pkgJSONPath": "./ember-mirage/package.json"
+      "oldVersion": "0.4.3"
     }
   },
-  "description": "## Release (2025-06-26)\n\nember-mirage 0.4.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-mirage`\n  * [#61](https://github.com/bgantzler/ember-mirage/pull/61) move qunit config out of module scope ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "\n\n\n\n"
 }
