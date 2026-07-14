@@ -1,5 +1,10 @@
 # Changelog
 
+
+
+
+
+
 ## Release (2025-06-26)
 
 ember-mirage 0.4.3 (patch)
