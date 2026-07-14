@@ -1,5 +1,8 @@
 # Migration
 
+> [!NOTE]
+> For a blog style walkgthrough of this information (and more), checkout this from Mainmatter: https://mainmatter.com/blog/2026/07/14/ember-mirage/
+
 Ember Mirage does not provide a lot of the features that ember-cli-mirage does. It is many of those features that is causing the ember-data issues as well as preventing support for embroider.
 
 Ember mirage does not support the following.
